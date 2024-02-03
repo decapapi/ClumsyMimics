@@ -125,21 +125,8 @@ public class ControlJugador : MonoBehaviour
         puedeDashear = false;
         estaDasheando = true;
         speedTransitionTimer = 0f;
-        //float elapsedTime = 0f;
-        //float cooldownTotal = dashCooldown + dashDuration;
         yield return new WaitForSeconds(dashDuration);
         estaDasheando = false;
-        //Vector3 originalPosition = transform.position;
-        //Vector3 targetPosition = new Vector3(transform.position.x + direccion.x * fuerzaDash, transform.position.y + direccion.y * fuerzaDash);
-
-        //while (elapsedTime < dashDuration)
-        //{
-            //transform.position = Vector3.Lerp(originalPosition, targetPosition, elapsedTime / dashDuration);
-            //elapsedTime += Time.deltaTime;
-            //yield return null;
-        //}
-
-        //transform.position = targetPosition;
         yield return new WaitForSeconds(dashCooldown);
         puedeDashear = true;
     }
