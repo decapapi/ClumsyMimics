@@ -5,19 +5,13 @@ using UnityEngine.UI;
 
 public class ControlInventario : MonoBehaviour
 {
-    public int slotsMaximos = 8;
     public Image[] inventoryIcons;
     public Transform transformJugador;
     public GameObject item1;
     public GameObject item2;
     public GameObject item3;
     public GameObject item4;
-    public GameObject item5;
-    public GameObject item6;
-    public GameObject item7;
-    public GameObject item8;
-    public GameObject item9;
-    public GameObject item10;
+    private int slotsMaximos = 8;
     private bool jugadorEnElInventario = false;
 
     private class ObjetoDeInventario
@@ -29,11 +23,6 @@ public class ControlInventario : MonoBehaviour
 
     private List<ObjetoDeInventario> objetosAlmacenados = new List<ObjetoDeInventario>();
 
-    void Start()
-    {
-        
-    }
-
     public void AnyadirObjeto(string tipo, int id)
     {
         if (InventarioLleno() || ItemExiste(id))
@@ -43,7 +32,7 @@ public class ControlInventario : MonoBehaviour
         {
             if (inventoryIcons[i].sprite == null)
             {
-                inventoryIcons[i].sprite = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + tipo);
+                inventoryIcons[i].sprite = Resources.Load<Sprite>("Arte/Escenas/Mapa/Enemigos/" + tipo);
                 inventoryIcons[i].enabled = true;
                 objetosAlmacenados.Add(new ObjetoDeInventario { itemId = id, tipo = tipo, slot = i });
                 break;
@@ -79,30 +68,12 @@ public class ControlInventario : MonoBehaviour
             case "4":
                 itemPrefab = item4;
                 break;
-            case "12":
-                itemPrefab = item5;
-                break;
-            case "13":
-                itemPrefab = item6;
-                break;
-            case "14":
-                itemPrefab = item7;
-                break;
-            case "23":
-                itemPrefab = item8;
-                break;
-            case "24":
-                itemPrefab = item9;
-                break;
-            case "34":
-                itemPrefab = item10;
-                break;
         }
 
         Vector3 posDropear;
         do {
-            posDropear = transformJugador.position + Random.insideUnitSphere * 4f;
-        } while (Vector3.Distance(posDropear, transformJugador.position) < 2f);
+            posDropear = transformJugador.position + Random.insideUnitSphere * 2f;
+        } while (Vector3.Distance(posDropear, transformJugador.position) < 1f);
 
         Instantiate(itemPrefab, new Vector3(posDropear.x, posDropear.y, 0f), Quaternion.identity);
     }
