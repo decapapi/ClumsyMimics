@@ -8,6 +8,8 @@ public class ControlJugador : MonoBehaviour
     private Transform transform;
     private bool MirandoDerecha = true;
     private bool MirandoArriba = true;
+    public float vida = 100f;
+
     void Start()
     {
         transform = GetComponent<Transform>();
@@ -39,6 +41,8 @@ public class ControlJugador : MonoBehaviour
         }
 
         Mover(inputMovimiento);
+
+        
     }
 
     void Mover(Vector3 direccion)
@@ -68,5 +72,12 @@ public class ControlJugador : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(rotacion);
         MirandoArriba = !MirandoArriba;
+    }
+
+    public void RecibirDano(float dano)
+    {
+        vida -= dano;
+        if (vida <= 0)
+            Destroy(gameObject);
     }
 }
