@@ -648,8 +648,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 132, y: 218}
-  m_SizeDelta: {x: 198.87, y: 54.63}
+  m_AnchoredPosition: {x: -421.9, y: 236}
+  m_SizeDelta: {x: 75.982, y: 39.5496}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &125079444
 MonoBehaviour:
@@ -1752,8 +1752,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 349, y: 218}
-  m_SizeDelta: {x: 215.8158, y: 49.0388}
+  m_AnchoredPosition: {x: -340, y: 236}
+  m_SizeDelta: {x: 75.9795, y: 39.554}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &766101323
 MonoBehaviour:
@@ -2503,6 +2503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duracionTransicion: 0.2
+  destello: {fileID: 0}
 --- !u!1 &1610253983
 GameObject:
   m_ObjectHideFlags: 0
