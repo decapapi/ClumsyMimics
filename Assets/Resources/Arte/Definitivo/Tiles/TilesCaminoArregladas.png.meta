@@ -1,0 +1,1099 @@
+fileFormatVersion: 2
+guid: 7c3b7c1eaaa663f4ba1c959a8519b815
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 552
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca89c86de1d84b40bfd5cd0dfbc0ed6
+      internalID: 1336932425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_1
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 552
+        width: 100
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbff359c3c0b48d42b319d46f5a5fa0f
+      internalID: -273254529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_2
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 552
+        width: 100
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d1ca7ad73ebf04594e9c2123658248
+      internalID: -487470345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_3
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 552
+        width: 100
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6516bb4e50e0415459569192f7547924
+      internalID: 311535485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_4
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 552
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a867d06835920c14ca3b20133b782679
+      internalID: -2015597746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_5
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 327
+        width: 166
+        height: 274
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300cfc7c7a873de4e83d31934a30f0e5
+      internalID: 517614738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_6
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 429
+        width: 271
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9851150c9c1d0c42913202334254f12
+      internalID: -877483945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_7
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 450
+        width: 54
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c16f7e60113328940ab008e2d5cb674f
+      internalID: 187682808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_8
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 450
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf143f59862b7f4e9157d47ed5d0ace
+      internalID: 1183684103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_9
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 490
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c324ac8aef3409141a4fe97bbf1006dc
+      internalID: -1403826540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_10
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 450
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42db39fb3d922d64c8d09cd205637dbd
+      internalID: -347801925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_11
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 450
+        width: 52
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363aea7ea920eea4c8b01e1d78995c39
+      internalID: 1041491958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_12
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 348
+        width: 58
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ed83d20202b9742bc7446ba16413df
+      internalID: -1976498548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_13
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 348
+        width: 54
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aecf2774ed550746b41c9cffa3db519
+      internalID: -1847442443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_14
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 345
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cd226acc9960d04faafa84add69aba1
+      internalID: 1598921859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_15
+      rect:
+        serializedVersion: 2
+        x: 329
+        y: 347
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9dd8526297797e4aa7cb84449c7b0ed
+      internalID: -1723077438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_16
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 347
+        width: 58
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 658f7cc288f4e6c4db5cd3aee1144843
+      internalID: 1712900249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_17
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 329
+        width: 62
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4176a0ee0e7f2e842bfc8f04e9a9e58b
+      internalID: -2103459472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_18
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 327
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 085980dd4e151b34a99b0e72ff2f358b
+      internalID: 988978889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_19
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 329
+        width: 85
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f870f6da71b57fa4593183387ad3aced
+      internalID: -316730310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_20
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 329
+        width: 61
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db178056d87874d48b8452f219a473bf
+      internalID: -36431459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_21
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 245
+        width: 54
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc992d9dc5f48f94a8fccb4d3e24d725
+      internalID: 2019618618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_22
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 245
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279fa0123d68cf7478ff69874f79575a
+      internalID: 119453614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_23
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 245
+        width: 100
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfc5dc3a55ae1d14ca958d659ee6328a
+      internalID: 1397005244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_24
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 245
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953824d73fc3418448ecc2574aca6e72
+      internalID: -306387178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_25
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 245
+        width: 56
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0f862fc55441349a009f99be14e860
+      internalID: 2075095506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_26
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 158
+        width: 166
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e554c9abd3f8f4e41bcca66306d19318
+      internalID: -779486378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_27
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 155
+        width: 274
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae16e4c4329273047b05172c8d8936bf
+      internalID: 1927399530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_28
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 190
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a4527ba68140c42aaa4b3ab817c725
+      internalID: 1204101915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_29
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 186
+        width: 100
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e857849060a8b44aac91009588b4587
+      internalID: -2113758401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_30
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 187
+        width: 100
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547f9994de7ce2342b6ebb7d78f28780
+      internalID: 1836137329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_31
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 182
+        width: 100
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d812fc3dbc7f457478185fb4195297eb
+      internalID: -631608760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_32
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 190
+        width: 52
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d55a54b21e3c0c47bc9b6d3ee5697b7
+      internalID: -229574849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_33
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 35
+        width: 43
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 386640e22b3b63949bc859edb4d4fc33
+      internalID: -1737807677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_34
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 84
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc05e23b1404fe438aa496d08367a06
+      internalID: -1732905137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_35
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 29
+        width: 84
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e4e738c1caaad74aadddf2330727be6
+      internalID: -223352132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_36
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 43
+        width: 73
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90bc0c3c77ff46a4c8f1b9b977cdaa95
+      internalID: 489666921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_37
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 72
+        width: 36
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c49c86d7f7b2a4f88a7848ccddbcf9
+      internalID: -1331225085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_38
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 23
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c89c811abb7ead6408f29d00c28896c2
+      internalID: -1811620205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_39
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 23
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd09067d42b32642acf458c794cd716
+      internalID: 1898591124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_40
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 68
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b22dda7b3d1db214abba2a6d642f54b5
+      internalID: 230110520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_41
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 65
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28a97ecc9a87dd848904e40ed65c4147
+      internalID: -1466483026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesCaminoArregladas_42
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 30
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6eb04753c1b24e43b13ad2bf5560e50
+      internalID: -901298471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      TilesCaminoArregladas_0: 1336932425
+      TilesCaminoArregladas_1: -273254529
+      TilesCaminoArregladas_10: -347801925
+      TilesCaminoArregladas_11: 1041491958
+      TilesCaminoArregladas_12: -1976498548
+      TilesCaminoArregladas_13: -1847442443
+      TilesCaminoArregladas_14: 1598921859
+      TilesCaminoArregladas_15: -1723077438
+      TilesCaminoArregladas_16: 1712900249
+      TilesCaminoArregladas_17: -2103459472
+      TilesCaminoArregladas_18: 988978889
+      TilesCaminoArregladas_19: -316730310
+      TilesCaminoArregladas_2: -487470345
+      TilesCaminoArregladas_20: -36431459
+      TilesCaminoArregladas_21: 2019618618
+      TilesCaminoArregladas_22: 119453614
+      TilesCaminoArregladas_23: 1397005244
+      TilesCaminoArregladas_24: -306387178
+      TilesCaminoArregladas_25: 2075095506
+      TilesCaminoArregladas_26: -779486378
+      TilesCaminoArregladas_27: 1927399530
+      TilesCaminoArregladas_28: 1204101915
+      TilesCaminoArregladas_29: -2113758401
+      TilesCaminoArregladas_3: 311535485
+      TilesCaminoArregladas_30: 1836137329
+      TilesCaminoArregladas_31: -631608760
+      TilesCaminoArregladas_32: -229574849
+      TilesCaminoArregladas_33: -1737807677
+      TilesCaminoArregladas_34: -1732905137
+      TilesCaminoArregladas_35: -223352132
+      TilesCaminoArregladas_36: 489666921
+      TilesCaminoArregladas_37: -1331225085
+      TilesCaminoArregladas_38: -1811620205
+      TilesCaminoArregladas_39: 1898591124
+      TilesCaminoArregladas_4: -2015597746
+      TilesCaminoArregladas_40: 230110520
+      TilesCaminoArregladas_41: -1466483026
+      TilesCaminoArregladas_42: -901298471
+      TilesCaminoArregladas_5: 517614738
+      TilesCaminoArregladas_6: -877483945
+      TilesCaminoArregladas_7: 187682808
+      TilesCaminoArregladas_8: 1183684103
+      TilesCaminoArregladas_9: -1403826540
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
