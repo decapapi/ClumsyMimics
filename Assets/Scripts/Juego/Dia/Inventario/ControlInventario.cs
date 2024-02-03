@@ -101,8 +101,8 @@ public class ControlInventario : MonoBehaviour
 
         Vector3 posDropear;
         do {
-            posDropear = transformJugador.position + Random.insideUnitSphere * 8f;
-        } while (Vector3.Distance(posDropear, transformJugador.position) < 5f);
+            posDropear = transformJugador.position + Random.insideUnitSphere * 4f;
+        } while (Vector3.Distance(posDropear, transformJugador.position) < 2f);
 
         Instantiate(itemPrefab, new Vector3(posDropear.x, posDropear.y, 0f), Quaternion.identity);
     }

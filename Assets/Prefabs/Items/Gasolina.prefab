@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 0.7058824}
   m_FlipX: 0
@@ -197,7 +197,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5771416277088665791}
@@ -281,7 +281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoDeItem: 12
   cooldownRecoger: 0.5
-  textura: {fileID: 0}
-  sombra: {fileID: 0}
+  textura: {fileID: 5771416277088665791}
+  sombra: {fileID: 342464306516267970}
   tamanyoInicioSombra: {x: 28, y: 10, z: 1}
   tamanyoFinalSombra: {x: 24, y: 8, z: 1}

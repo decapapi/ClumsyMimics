@@ -113,7 +113,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -26.3, y: 0, z: 1}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 0.75, y: 0.75, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3265603848116177777}
@@ -133,6 +133,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoDeItem: 12
   cooldownRecoger: 0.5
+  textura: {fileID: 0}
+  sombra: {fileID: 0}
+  tamanyoInicioSombra: {x: 0.5, y: 0.1, z: 1}
+  tamanyoFinalSombra: {x: 0.4, y: 0.06, z: 1}
 --- !u!61 &1562443718937279623
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -192,3 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tipoDeItem: 12
   cooldownRecoger: 0.5
+  textura: {fileID: 0}
+  sombra: {fileID: 0}
+  tamanyoInicioSombra: {x: 0.5, y: 0.1, z: 1}
+  tamanyoFinalSombra: {x: 0.4, y: 0.06, z: 1}

@@ -32,7 +32,7 @@ public class ControlJugador : MonoBehaviour
         Vector3 inputMovimiento = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W)) {
-        inputMovimiento.y = 1;
+            inputMovimiento.y = 1;
         }
         else if (Input.GetKey(KeyCode.S)) {
             inputMovimiento.y = -1;
@@ -45,14 +45,12 @@ public class ControlJugador : MonoBehaviour
             inputMovimiento.x = -1;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && puedeDashear)
+        if (Input.GetKeyDown(KeyCode.E) && puedeDashear)
         {
             StartCoroutine(Dash());
         }
 
         Mover(inputMovimiento);
-
-        Debug.Log("Vida: " + vida);
     }
 
     void OnCollisionStay2D(Collision2D other)

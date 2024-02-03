@@ -11,6 +11,15 @@ public class ControlDia : MonoBehaviour
     private bool isGamePaused = false;
     public GameObject menuPausa;
     private static int dia = 0;
+    public static int BalasTotales {get;set;} = 5;
+    public int RecuentoBalas()
+    {
+        return BalasTotales;
+    }
+    public void RestarBalas()
+    {
+        BalasTotales--;
+    }
 
     void Start()
     {
