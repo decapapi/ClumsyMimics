@@ -13,12 +13,23 @@ public class ControlPedidos : MonoBehaviour
     public Image imagenMaterial2;
     private string productoPedido;
     private GeneradorNPCs generadorNPCs;
+    public static int dinero = 0;
+    public Text dineroTexto;
 
     void Start()
     {
         generadorNPCs = GameObject.Find("Generador NPCs").GetComponent<GeneradorNPCs>();
         bocadilloPedidoRandom.localScale = Vector3.zero;
         bocadilloPedidoNormal.localScale = Vector3.zero;
+    }
+    void Update()
+    {
+        ActualizarDinerotexto();
+    }
+
+    void ActualizarDinerotexto()
+    {
+        dineroTexto.text = "AHORROS: " + dinero.ToString() + " pesetas";
     }
 
     public void GenerarPedidoRandom()
@@ -45,25 +56,27 @@ public class ControlPedidos : MonoBehaviour
 
         bool productoVendido = false;
 
-        if (imagenResultado.sprite != null)
+        if (imagenResultado.sprite != null) // 75
         {
             imagenResultado.sprite = null;
             imagenResultado.enabled = false;
             productoVendido = true;
+            dinero += 75;
         }
-        
-        if (imagenMaterial1.sprite != null)
+        if (imagenMaterial1.sprite != null) // 25
         {
             imagenMaterial1.sprite = null;
             imagenMaterial1.enabled = false;
             productoVendido = true;
+            dinero += 25;
         }
 
-        if (imagenMaterial2.sprite != null)
+        if (imagenMaterial2.sprite != null) // 25
         {
             imagenMaterial2.sprite = null;
             imagenMaterial2.enabled = false;
             productoVendido = true;
+            dinero += 25;
         }
 
         if (productoVendido)
@@ -78,8 +91,9 @@ public class ControlPedidos : MonoBehaviour
         if (imagenResultado.sprite == null)
         return;
 
-        else if (imagenResultado.sprite.name == productoPedido)
+        if (imagenResultado.sprite.name == productoPedido) // 250
         {
+            dinero += 250;
             imagenResultado.sprite = null;
             imagenResultado.enabled = false;
             CerrarPedidoNormal();
