@@ -22,6 +22,7 @@ public class ControlJugador : MonoBehaviour
     private float velocidadActual;
     private float speedTransitionTimer;
     private float tiempoEnTrigger = 0f;
+    Quaternion rotacion;
 
     void Start()
     {
@@ -33,8 +34,6 @@ public class ControlJugador : MonoBehaviour
     {
         Vector3 inputMovimiento = Vector3.zero;
 
-        Debug.Log(tiempoEnTrigger);
-
         if (tiempoEnTrigger >= 3f)
         {
             SceneManager.LoadScene("JuegoNoche");
@@ -42,16 +41,19 @@ public class ControlJugador : MonoBehaviour
 
         if (Input.GetKey(KeyCode.W)) {
             inputMovimiento.y = 1;
+            rotacion = Quaternion.Euler(0, 0, 90);
         }
         else if (Input.GetKey(KeyCode.S)) {
             inputMovimiento.y = -1;
+            rotacion = Quaternion.Euler(0, 0, 270);
         }
-
         if (Input.GetKey(KeyCode.D)) {
             inputMovimiento.x = 1;
+            rotacion = Quaternion.Euler(0, 0, 0);
         }
         else if (Input.GetKey(KeyCode.A)) {
             inputMovimiento.x = -1;
+            rotacion = Quaternion.Euler(0, 0, 180);
         }
 
         if (Input.GetKeyDown(KeyCode.E) && puedeDashear)
@@ -64,12 +66,15 @@ public class ControlJugador : MonoBehaviour
         if (transform.position.x > -6f && transform.position.x < -2f && transform.position.y > -3f && transform.position.y < 2f)
         {
             tiempoEnTrigger += Time.deltaTime;
-            Debug.Log("Dentro del rango, tiempoEnTrigger: " + tiempoEnTrigger);
         }
         else
         {
             tiempoEnTrigger = 0f;
-            Debug.Log("Fuera del rango, tiempoEnTrigger reseteado");
+        }
+
+        if (inputMovimiento == Vector3.zero && rotacion != null)
+        {
+            transform.rotation = rotacion;
         }
     }
 
