@@ -20,7 +20,7 @@ public class SeguimientoEnemigo : MonoBehaviour
         if (distancia < distanciaAtaque)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
+            transform.rotation = Quaternion.Euler(Vector3.forward * angulo + new Vector3(0, 0, 0));
         }
     }
 }
