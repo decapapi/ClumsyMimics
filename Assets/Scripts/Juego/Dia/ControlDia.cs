@@ -10,10 +10,12 @@ public class ControlDia : MonoBehaviour
     public Text contador;
     private bool isGamePaused = false;
     public GameObject menuPausa;
+    private static int dia = 0;
 
     void Start()
     {
         InvokeRepeating("ActualizarContador", 0f, 1f);
+        dia++;
     }
 
     void Update()
@@ -28,11 +30,11 @@ public class ControlDia : MonoBehaviour
     {
         isGamePaused = !isGamePaused;
 
-        if (isGamePaused) 
+        if (isGamePaused)
         {
             Time.timeScale = 0f;
             menuPausa.SetActive(true);
-        } 
+        }
         else
         {
             Time.timeScale = 1f;
