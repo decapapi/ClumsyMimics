@@ -19,7 +19,7 @@ public class EfectoLuz : MonoBehaviour
         while (true)
         {
             float alphaInicial = overlay.color.a;
-            float alphaFinal = Random.Range(30f / 255f, 60f / 255f);
+            float alphaFinal = Random.Range(70f / 255f, 120f / 255f);
 
             float elapsedTime = 0f;
 
