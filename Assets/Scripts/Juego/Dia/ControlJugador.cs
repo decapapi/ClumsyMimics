@@ -13,13 +13,6 @@ public class ControlJugador : MonoBehaviour
     public Rigidbody2D rb;
     public float knockback = 5f;
     public float knockbackDuration = 0.5f;
-    private bool puedeDashear = true;
-    private bool estaDasheando = false;
-    public float dashCooldown = 1.5f;
-    public float dashDuration = 0.5f;
-    public float fuerzaDash = 10f;
-    private float velocidadActual;
-    private float speedTransitionTimer;
 
     void Start()
     {
@@ -32,7 +25,7 @@ public class ControlJugador : MonoBehaviour
         Vector3 inputMovimiento = Vector3.zero;
 
         if (Input.GetKey(KeyCode.W)) {
-        inputMovimiento.y = 1;
+            inputMovimiento.y = 1;
         }
         else if (Input.GetKey(KeyCode.S)) {
             inputMovimiento.y = -1;
@@ -43,11 +36,6 @@ public class ControlJugador : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.A)) {
             inputMovimiento.x = -1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space) && puedeDashear)
-        {
-            StartCoroutine(Dash());
         }
 
         Mover(inputMovimiento);
@@ -72,21 +60,7 @@ public class ControlJugador : MonoBehaviour
 
     void Mover(Vector3 direccion)
     {
-        if (!estaDasheando)
-        {
-            velocidadActual = velocidad;
-        }
-        else
-        {
-            speedTransitionTimer += Time.fixedDeltaTime;
-            velocidadActual = Mathf.Lerp(velocidad, velocidad  * fuerzaDash, speedTransitionTimer / dashDuration);
-            if (speedTransitionTimer >= dashDuration)
-            {
-                estaDasheando = false;
-            }
-        }
-        rb.velocity = direccion.normalized * velocidadActual;
-        transform.position += direccion.normalized * Time.deltaTime * velocidadActual;
+        transform.position += direccion.normalized * Time.deltaTime * velocidad;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
     }
@@ -118,16 +92,5 @@ public class ControlJugador : MonoBehaviour
         }
 
         transform.position = targetPosition;
-    }
-
-    IEnumerator Dash()
-    {
-        puedeDashear = false;
-        estaDasheando = true;
-        speedTransitionTimer = 0f;
-        yield return new WaitForSeconds(dashDuration);
-        estaDasheando = false;
-        yield return new WaitForSeconds(dashCooldown);
-        puedeDashear = true;
     }
 }

@@ -43,6 +43,3 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Secundario
-    uniqueID: 2044568697
-    locked: 0
