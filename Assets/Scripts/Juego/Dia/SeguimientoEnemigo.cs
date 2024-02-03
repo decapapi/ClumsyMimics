@@ -11,16 +11,12 @@ public class SeguimientoEnemigo : MonoBehaviour
     public float distanciaAtaque = 35f;
     void Start()
     {
-        
     }
-
-    
     void Update()
     {
         distancia = Vector2.Distance(jugador.transform.position, transform.position);
         Vector2 direccion = (jugador.transform.position - transform.position).normalized;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
-        
         if (distancia < distanciaAtaque)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
