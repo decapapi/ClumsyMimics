@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ControlJugador : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class ControlJugador : MonoBehaviour
     public float fuerzaDash = 10f;
     private float velocidadActual;
     private float speedTransitionTimer;
+    private float tiempoEnTrigger = 0f;
 
     void Start()
     {
@@ -30,6 +32,13 @@ public class ControlJugador : MonoBehaviour
     void Update()
     {
         Vector3 inputMovimiento = Vector3.zero;
+
+        Debug.Log(tiempoEnTrigger);
+
+        if (tiempoEnTrigger >= 3f)
+        {
+            SceneManager.LoadScene("JuegoNoche");
+        }
 
         if (Input.GetKey(KeyCode.W)) {
             inputMovimiento.y = 1;
@@ -51,6 +60,17 @@ public class ControlJugador : MonoBehaviour
         }
 
         Mover(inputMovimiento);
+
+        if (transform.position.x > -6f && transform.position.x < -2f && transform.position.y > -3f && transform.position.y < 2f)
+        {
+            tiempoEnTrigger += Time.deltaTime;
+            Debug.Log("Dentro del rango, tiempoEnTrigger: " + tiempoEnTrigger);
+        }
+        else
+        {
+            tiempoEnTrigger = 0f;
+            Debug.Log("Fuera del rango, tiempoEnTrigger reseteado");
+        }
     }
 
     void OnCollisionStay2D(Collision2D other)
@@ -93,7 +113,7 @@ public class ControlJugador : MonoBehaviour
     {
         vida -= dano;
         if (vida <= 0)
-            Destroy(gameObject);
+            SceneManager.LoadScene("Gameover");
     }
 
     IEnumerator EsperarDano()
