@@ -107,16 +107,20 @@ public class ControlPedidos : MonoBehaviour
 
     public void CancelarPedidoRandom()
     {
-        CerrarPedidoRandom();
-        generadorNPCs.BorrarNPC(true);
-        StartCoroutine(generadorNPCs.SpawnearNPCConDelay(true, Random.Range(4, 7)));
+        if (generadorNPCs.randomNPCActivo() && bocadilloPedidoRandom.localScale != Vector3.zero) {
+            CerrarPedidoRandom();
+            generadorNPCs.BorrarNPC(true);
+            StartCoroutine(generadorNPCs.SpawnearNPCConDelay(true, Random.Range(4, 7)));
+        }
     }
 
     public void CancelarPedidoNormal()
     {
-        CerrarPedidoNormal();
-        generadorNPCs.BorrarNPC(false);
-        StartCoroutine(generadorNPCs.SpawnearNPCConDelay(false, Random.Range(4, 7)));
+        if (generadorNPCs.normalNPCActivo() && bocadilloPedidoNormal.localScale != Vector3.zero) {
+            CerrarPedidoNormal();
+            generadorNPCs.BorrarNPC(false);
+            StartCoroutine(generadorNPCs.SpawnearNPCConDelay(false, Random.Range(4, 7)));
+        }
     }
 
     public void CerrarPedidoRandom()

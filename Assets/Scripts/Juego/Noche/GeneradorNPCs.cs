@@ -55,6 +55,8 @@ public class GeneradorNPCs : MonoBehaviour
 
         while (elapsedTime < tiempoMovimiento)
         {
+            if (objetoNpc == null)
+                yield break;
             objetoNpc.transform.position = Vector3.Lerp(startingPos, destino, elapsedTime / tiempoMovimiento);
             elapsedTime += Time.deltaTime;
             yield return null;
@@ -83,6 +85,16 @@ public class GeneradorNPCs : MonoBehaviour
             controlPedidos.GenerarPedidoRandom();
         else
             controlPedidos.GenerarPedidoNormal();
+    }
+
+    public bool randomNPCActivo()
+    {
+        return randomNPC != null;
+    }
+
+    public bool normalNPCActivo()
+    {
+        return normalNPC != null;
     }
 
     public IEnumerator SpawnearNPCConDelay(bool randomNPC, float delay)
