@@ -54,8 +54,14 @@ public class ControlDia : MonoBehaviour
     void ActualizarContador()
     {
         tiempoRestante -= 1f;
+        tiempoRestante = Mathf.Max(0f, tiempoRestante);
 
-        contador.text = "Tiempo restante: " + tiempoRestante.ToString() + "s";
+        int horas = Mathf.FloorToInt(tiempoRestante / 3600);
+        int minutos = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
+
+        string tiempoFormateado = string.Format("{0:D2}:{1:D2}h", horas, minutos);
+
+        contador.text = tiempoFormateado;
 
         if (tiempoRestante <= 0)
             SceneManager.LoadScene("Gameover");
