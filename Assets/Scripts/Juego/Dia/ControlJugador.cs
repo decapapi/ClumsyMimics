@@ -108,10 +108,13 @@ public class ControlJugador : MonoBehaviour
                 estaDasheando = false;
             }
         }
+        
         rb.velocity = direccion.normalized * velocidadActual;
         transform.position += direccion.normalized * Time.deltaTime * velocidadActual;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
+        
+        
     }
 
     private void RecibirDano(float dano)
