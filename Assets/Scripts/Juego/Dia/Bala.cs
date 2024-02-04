@@ -11,8 +11,8 @@ public class Bala : MonoBehaviour
         {
             loot = other.gameObject.GetComponent<SeguimientoEnemigo>().tipo;
             Destroy(other.gameObject);
-            Destroy(gameObject);
             Instantiate(loot, transform.position, Quaternion.identity);
         }
+        Destroy(gameObject);
     }
 }
