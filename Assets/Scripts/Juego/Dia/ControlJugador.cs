@@ -7,7 +7,7 @@ public class ControlJugador : MonoBehaviour
 {
     public float velocidad = 50f;
     private Transform transform;
-    public float vida = 100f;
+    public int vida = 5;
     private GameObject[] enemigos;
     public float cooldownDano = 1.5f;
     private bool puedeRecibirDano = true;
@@ -22,10 +22,12 @@ public class ControlJugador : MonoBehaviour
     private float velocidadActual;
     private float speedTransitionTimer;
     private float tiempoEnTrigger = 0f;
+    private ControlHUD controlHUD;
     Quaternion rotacion;
 
     void Start()
     {
+        controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
         transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -84,7 +86,7 @@ public class ControlJugador : MonoBehaviour
             StartCoroutine(AplicarKnockback(diferencia));
             if (puedeRecibirDano)
             {
-                RecibirDano(10f);
+                RecibirDano();
                 puedeRecibirDano = false;
                 StartCoroutine(EsperarDano());
             }
@@ -112,9 +114,10 @@ public class ControlJugador : MonoBehaviour
         transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
     }
 
-    private void RecibirDano(float dano)
+    private void RecibirDano()
     {
-        vida -= dano;
+        vida--;
+        controlHUD.QuitarCorazon();
         if (vida <= 0)
             SceneManager.LoadScene("Gameover");
     }

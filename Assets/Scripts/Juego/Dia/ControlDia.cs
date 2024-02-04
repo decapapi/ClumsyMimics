@@ -11,13 +11,26 @@ public class ControlDia : MonoBehaviour
     private bool isGamePaused = false;
     public GameObject menuPausa;
     private static int dia = 0;
-    public static int BalasTotales { get; set; } = 5;
+    public static int BalasTotales {get;set;} = 5;
+    private ControlHUD controlHUD;
 
     void Start()
     {
+        controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
         InvokeRepeating("ActualizarContador", 0f, 1f);
         dia++;
     }
+
+    public int RecuentoBalas()
+    {
+        return BalasTotales;
+    }
+    public void RestarBalas()
+    {
+        controlHUD.QuitarBala();
+        BalasTotales--;
+    }
+
 
     void Update()
     {
@@ -48,28 +61,14 @@ public class ControlDia : MonoBehaviour
         tiempoRestante += 1f;
         tiempoRestante = Mathf.Min(18000f, tiempoRestante);
 
-        // Calcular la hora actual en el formato de 24 horas
-        int horasActuales = Mathf.FloorToInt(tiempoRestante / 3600);
-        int minutosActuales = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
+        int horas = 8 + Mathf.FloorToInt(tiempoRestante / 3600);
+        int minutos = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
 
-        // Calcular la hora de inicio del juego
-        int horaInicio = 8;
+        string tiempoFormateado = string.Format("{0:D2}:{1:D2}h", horas, minutos);
 
-        // Calcular la hora final del juego
-        int horaFinal = 20;
-
-        // Calcular la hora actual progresiva
-        int horaProgresiva = horaInicio + horasActuales;
-
-        // Formatear el tiempo como texto
-        string tiempoFormateado = string.Format("{0:D2}:{1:D2}h", horaProgresiva, minutosActuales);
-
-        // Actualizar el texto en pantalla
         contador.text = tiempoFormateado;
 
         if (tiempoRestante >= 18000)
-        {
             SceneManager.LoadScene("Gameover");
-        }
     }
 }
