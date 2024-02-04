@@ -1184,8 +1184,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 276498541}
+  m_Children: []
   m_Father: {fileID: 1564036125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1205,7 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02d96c799078c4a40a7dc6aea92f36e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transition: {fileID: 0}
+  transition: {fileID: 11624334}
   transitionTime: 1
 --- !u!225 &213838014
 CanvasGroup:
@@ -1552,7 +1551,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276498540}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1562,7 +1561,7 @@ RectTransform:
   - {fileID: 2032605410}
   - {fileID: 1541156633}
   - {fileID: 263932605}
-  m_Father: {fileID: 213838012}
+  m_Father: {fileID: 1564036125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2815,8 +2814,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1389282142}
+  m_Children: []
   m_Father: {fileID: 1564036125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -7133,14 +7131,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1389282141}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1793528281}
   - {fileID: 2004926479}
-  m_Father: {fileID: 388363931}
+  m_Father: {fileID: 1564036125}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -8820,10 +8818,13 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 213838012}
+  - {fileID: 276498541}
   - {fileID: 1365161179}
   - {fileID: 1276465985}
   - {fileID: 494422521}
   - {fileID: 388363931}
+  - {fileID: 1389282142}
+  - {fileID: 11624338}
   - {fileID: 478540063}
   - {fileID: 2105788228}
   - {fileID: 6911100284350610049}
@@ -8881,7 +8882,6 @@ RectTransform:
   - {fileID: 1211553064}
   - {fileID: 288898734}
   - {fileID: 349334852}
-  - {fileID: 11624338}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -12287,6 +12287,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1564036125}
     m_Modifications:
+    - target: {fileID: 3060908173544095243, guid: f0932624ee1b1914791fcb27567ae600, type: 3}
+      propertyPath: m_CompositePaths.m_Paths.Array.size
+      value: 428
+      objectReference: {fileID: 0}
+    - target: {fileID: 3060908173544095243, guid: f0932624ee1b1914791fcb27567ae600, type: 3}
+      propertyPath: m_ColliderPaths.Array.data[0].m_ColliderPaths.Array.size
+      value: 424
+      objectReference: {fileID: 0}
     - target: {fileID: 3623265598768710922, guid: f0932624ee1b1914791fcb27567ae600, type: 3}
       propertyPath: m_Name
       value: Grid

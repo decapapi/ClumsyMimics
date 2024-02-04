@@ -55,7 +55,7 @@ public class ControlJugador : MonoBehaviour
 
         if (tiempoEnTrigger >= 3f)
         {
-            SceneManager.LoadScene("JuegoNoche");
+            escenas.CargarEscena("JuegoNoche");
         }
 
         if (Input.GetKey(KeyCode.W)) {
