@@ -6,13 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class ControlDia : MonoBehaviour
 {
-    public float tiempoRestante = 0f;
+    public float tiempoRestante = 180f; // Establece el tiempo total del juego en segundos (180 segundos = 3 minutos)
     public Text contador;
     private bool isGamePaused = false;
     public GameObject menuPausa;
     private static int dia = 0;
     public static int BalasTotales {get;set;} = 5;
     private ControlHUD controlHUD;
+
+    private const float tiempoTotalJuego = 180f;
+    private const string horaInicio = "08:00";
+    private const string horaFin = "20:00";
 
     void Start()
     {
@@ -58,17 +62,23 @@ public class ControlDia : MonoBehaviour
 
     void ActualizarContador()
     {
-        tiempoRestante += 1f;
-        tiempoRestante = Mathf.Min(18000f, tiempoRestante);
+        if (!isGamePaused)
+        {
+            tiempoRestante -= Time.deltaTime;
 
-        int horas = 8 + Mathf.FloorToInt(tiempoRestante / 3600);
-        int minutos = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
+            // Calcular horas y minutos a partir del tiempo restante
+            int horas = Mathf.FloorToInt(tiempoRestante / 3600);
+            int minutos = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
+            string tiempoFormateado = $"{horas:D2}:{minutos:D2}";
 
-        string tiempoFormateado = string.Format("{0:D2}:{1:D2}h", horas, minutos);
+            // Actualizar el texto en pantalla
+            contador.text = tiempoFormateado;
 
-        contador.text = tiempoFormateado;
-
-        if (tiempoRestante >= 18000)
-            SceneManager.LoadScene("Gameover");
+            if (tiempoRestante <= 0f)
+            {
+                // Si se acaba el tiempo, se acaba el juego
+                SceneManager.LoadScene("Gameover");
+            }
+        }
     }
 }
