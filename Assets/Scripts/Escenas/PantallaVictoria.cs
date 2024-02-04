@@ -10,9 +10,22 @@ public class Victoria : MonoBehaviour
     public int puntuacion;
     private ControlEscenas controlEscenas;
 
+    public GameObject controlador;
+    public ControlGlobal controlGlobalScript;
+
     void Start()
     {
         controlEscenas = FindObjectOfType<ControlEscenas>();
+        controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        if (controlGlobalScript != null)
+        {
+            puntuacion = controlGlobalScript.Dinero;
+        }
+        else
+        {
+            GameObject nuevoControl = Instantiate(controlador);
+            controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
+        }
     }
 
     public void CambiarEscena()
@@ -21,6 +34,8 @@ public class Victoria : MonoBehaviour
             return;
         
         GuardarPuntuacion(input.text, puntuacion);
+
+        controlGlobalScript.Resetear();
 
         controlEscenas.CargarEscena("Inicio");
     }
