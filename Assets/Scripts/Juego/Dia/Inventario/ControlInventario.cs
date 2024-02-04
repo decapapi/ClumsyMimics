@@ -17,6 +17,7 @@ public class ControlInventario : MonoBehaviour
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
 
+    private int numeroItems = 0;
     private class ObjetoDeInventario
     {
         public int itemId;
@@ -37,8 +38,8 @@ public class ControlInventario : MonoBehaviour
                 if (controlGlobalScript.ObjetosGuardados[i] != null && controlGlobalScript.ObjetosGuardados[i] != "" && controlGlobalScript.ObjetosGuardados[i] != "0")
                 {
                     AnyadirObjeto(controlGlobalScript.ObjetosGuardados[i], i + 9999);
+                    numeroItems++;
                 }
-                
             }
         }
         else
@@ -51,7 +52,8 @@ public class ControlInventario : MonoBehaviour
     public void AnyadirObjetoExterno(string tipo, int id)
     {
         AnyadirObjeto(tipo, id);
-        controlGlobalScript.ObjetosGuardados[id] = tipo;
+        controlGlobalScript.ObjetosGuardados[numeroItems] = tipo;
+        numeroItems++;
     }
     public void AnyadirObjeto(string tipo, int id)
     {
