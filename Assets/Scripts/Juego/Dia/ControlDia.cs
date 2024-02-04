@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ControlDia : MonoBehaviour
 {
-    public float tiempoRestante;
+    public float tiempoRestante = 0f;
     public Text contador;
     private bool isGamePaused = false;
     public GameObject menuPausa;
@@ -53,17 +53,17 @@ public class ControlDia : MonoBehaviour
 
     void ActualizarContador()
     {
-        tiempoRestante -= 1f;
-        tiempoRestante = Mathf.Max(0f, tiempoRestante);
+        tiempoRestante += 1f;
+        tiempoRestante = Mathf.Min(18000f, tiempoRestante);
 
-        int horas = Mathf.FloorToInt(tiempoRestante / 3600);
+        int horas = 8 + Mathf.FloorToInt(tiempoRestante / 3600);
         int minutos = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
 
         string tiempoFormateado = string.Format("{0:D2}:{1:D2}h", horas, minutos);
 
         contador.text = tiempoFormateado;
 
-        if (tiempoRestante <= 0)
+        if (tiempoRestante >= 18000)
             SceneManager.LoadScene("Gameover");
     }
 }
