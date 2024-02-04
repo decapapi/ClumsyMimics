@@ -27,6 +27,9 @@ public class ControlJugador : MonoBehaviour
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
+    private float transitionTime = 1f;
+    public Animator transition;
+    public ControlEscenas escenas;
     
 
     void Start()
@@ -34,6 +37,7 @@ public class ControlJugador : MonoBehaviour
         controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
         transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        escenas = GameObject.Find("GENERAL").GetComponent<ControlEscenas>();
         
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
         if (controlGlobalScript != null)
@@ -135,7 +139,7 @@ public class ControlJugador : MonoBehaviour
         if (vida <= 0)
         {
             controlGlobalScript.Resetear();
-            SceneManager.LoadScene("Gameover");
+            escenas.CargarEscena("GameOver");
         }
     }
 
