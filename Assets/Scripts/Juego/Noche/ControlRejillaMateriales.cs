@@ -107,6 +107,9 @@ public class ControlRejillaMateriales : MonoBehaviour
 
     public void Craftear()
     {
+        if (material1.sprite.name == material2.sprite.name)
+            return;
+
         if (material1.sprite == null || material2.sprite == null)
             return;
 
