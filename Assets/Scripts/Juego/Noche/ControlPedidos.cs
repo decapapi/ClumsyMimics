@@ -17,12 +17,24 @@ public class ControlPedidos : MonoBehaviour
     public Text dineroTexto;
     private AudioSource sonidoVender;
 
+    public GameObject controlador;
+    public ControlGlobal controlGlobalScript;
+
     void Start()
     {
         sonidoVender = GameObject.Find("Vender").GetComponent<AudioSource>();
         generadorNPCs = GameObject.Find("Generador NPCs").GetComponent<GeneradorNPCs>();
         bocadilloPedidoRandom.localScale = Vector3.zero;
         bocadilloPedidoNormal.localScale = Vector3.zero;
+
+        controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        if (controlGlobalScript != null)
+        {
+            dinero = controlGlobalScript.Dinero;          
+        }else{
+            GameObject nuevoControl = Instantiate(controlador);
+            controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
+        }
     }
     void Update()
     {
@@ -87,6 +99,8 @@ public class ControlPedidos : MonoBehaviour
             generadorNPCs.BorrarNPC(true);
             StartCoroutine(generadorNPCs.SpawnearNPCConDelay(true, Random.Range(4, 7)));
         }
+
+        controlGlobalScript.Dinero = dinero;
     }
 
     public void VenderProductoNormal()
@@ -107,6 +121,8 @@ public class ControlPedidos : MonoBehaviour
             generadorNPCs.BorrarNPC(false);
             StartCoroutine(generadorNPCs.SpawnearNPCConDelay(false, Random.Range(4, 7)));
         }
+
+        controlGlobalScript.Dinero = dinero;
     }
 
     public void CancelarPedidoRandom()

@@ -9,17 +9,29 @@ public class ControlRejillaMateriales : MonoBehaviour
     public Image material2;
     public Image resultado;
     public Image[] rejillas;
-    private List<KeyValuePair<string, int>> armasAlmacenadas = new List<KeyValuePair<string, int>>();
+    private List<string> armasAlmacenadas = new List<string>();
+
+    public GameObject controlador;
+    public ControlGlobal controlGlobalScript;
+
     void Start()
     {
-        AnyadirArmaARejilla("1");
-        AnyadirArmaARejilla("2");
-        AnyadirArmaARejilla("3");
-        AnyadirArmaARejilla("4");
-        AnyadirArmaARejilla("4");
-        AnyadirArmaARejilla("3");
-        AnyadirArmaARejilla("2");
-        AnyadirArmaARejilla("1");
+        controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        if (controlGlobalScript != null)
+        {
+            for (int i = 0; i < controlGlobalScript.ObjetosGuardados.Length; i++)
+            {
+                if (controlGlobalScript.ObjetosGuardados[i] != null && controlGlobalScript.ObjetosGuardados[i] != "" && controlGlobalScript.ObjetosGuardados[i] != "0")
+                {
+                    AnyadirArmaARejilla(controlGlobalScript.ObjetosGuardados[i]);
+                }
+            }
+        }
+        else
+        {
+            GameObject nuevoControl = Instantiate(controlador);
+            controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
+        }
     }
 
     public void AnyadirArmaARejilla(string arma)
@@ -27,13 +39,13 @@ public class ControlRejillaMateriales : MonoBehaviour
         if (InventarioLleno())
             return;
 
-        for (int i = 0; i < 8; i++) 
+        for (int i = 0; i < 8; i++)
         {
             if (rejillas[i].sprite == null)
             {
                 rejillas[i].sprite = Resources.Load<Sprite>("Arte/Items/" + arma);
                 rejillas[i].enabled = true;
-                armasAlmacenadas.Add(new KeyValuePair<string, int>(arma, i));
+                armasAlmacenadas.Add(arma);
                 break;
             }
         }
@@ -54,21 +66,11 @@ public class ControlRejillaMateriales : MonoBehaviour
             return;
 
         string arma = rejillas[slot].sprite.name;
-        KeyValuePair<string, int>? armaAlmacenada = null;
 
-        foreach (var storedWeapon in armasAlmacenadas)
-        {
-            if (storedWeapon.Key == arma)
-            {
-                armaAlmacenada = storedWeapon;
-                break;
-            }
-        }
-
-        if (armaAlmacenada == null)
+        if (!armasAlmacenadas.Contains(arma))
             return;
 
-        armasAlmacenadas.Remove(armaAlmacenada.Value);
+        armasAlmacenadas.Remove(arma);
         rejillas[slot].sprite = null;
         rejillas[slot].enabled = false;
 
@@ -120,7 +122,7 @@ public class ControlRejillaMateriales : MonoBehaviour
 
         if (imagenResultado == null)
             imagenResultado = Resources.Load<Sprite>("Arte/Items/" + arma2 + arma1);
-            
+
         resultado.sprite = imagenResultado;
         resultado.enabled = true;
 
@@ -128,6 +130,25 @@ public class ControlRejillaMateriales : MonoBehaviour
         material1.enabled = false;
         material2.sprite = null;
         material2.enabled = false;
+        
+        string[] copia = new string[8];
+        bool arma1encontrada = false;  
+        bool arma2encontrada = false;
+        for (int i = 0; i < armasAlmacenadas.Count; i++)
+        {
+            if (armasAlmacenadas[i] == arma1 && !arma1encontrada)
+            {
+                arma1encontrada = true;
+                continue;
+            }
+            if (armasAlmacenadas[i] == arma2 && !arma2encontrada)
+            {
+                arma2encontrada = true;
+                continue;
+            }
+            copia[i] = armasAlmacenadas[i];
+        }
+        controlGlobalScript.ObjetosGuardados = copia;
     }
 
     public bool InventarioLleno()

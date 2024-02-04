@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class ControlGlobal : MonoBehaviour
 {
-    public static string[] ObjetosGuardados { get; set; } = new string[8];
-    public static int Balas { get; set; } = 5;
-    public static int Vidas { get; set; } = 5;
-    public static int Dinero { get; set; } = 0;
+    public  string[] ObjetosGuardados { get; set; } = new string[8];
+    public  int Balas { get; set; } = 5;
+    public  int Vidas { get; set; } = 5;
+    public  int Dinero { get; set; } = 0;
 
     private void Awake() 
     {
         DontDestroyOnLoad(this.gameObject);
     }
 
-    public static void Resetear()
+    public void anyadirobjeto()
+    {
+        
+    }
+
+    public void Resetear()
     {
         ObjetosGuardados = new string[8];
         Balas = 5;

@@ -14,6 +14,9 @@ public class ControlInventario : MonoBehaviour
     private int slotsMaximos = 8;
     private bool jugadorEnElInventario = false;
 
+    public GameObject controlador;
+    public ControlGlobal controlGlobalScript;
+
     private class ObjetoDeInventario
     {
         public int itemId;
@@ -21,8 +24,35 @@ public class ControlInventario : MonoBehaviour
         public int slot;
     }
 
+    
     private List<ObjetoDeInventario> objetosAlmacenados = new List<ObjetoDeInventario>();
 
+    void Start()
+    {
+        controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        if (controlGlobalScript != null)
+        {
+            for (int i = 0; i < controlGlobalScript.ObjetosGuardados.Length; i++)
+            {
+                if (controlGlobalScript.ObjetosGuardados[i] != null && controlGlobalScript.ObjetosGuardados[i] != "" && controlGlobalScript.ObjetosGuardados[i] != "0")
+                {
+                    AnyadirObjeto(controlGlobalScript.ObjetosGuardados[i], i + 9999);
+                }
+                
+            }
+        }
+        else
+        {
+            GameObject nuevoControl = Instantiate(controlador);
+            controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
+        }
+    }
+
+    public void AnyadirObjetoExterno(string tipo, int id)
+    {
+        AnyadirObjeto(tipo, id);
+        controlGlobalScript.ObjetosGuardados[id] = tipo;
+    }
     public void AnyadirObjeto(string tipo, int id)
     {
         if (InventarioLleno() || ItemExiste(id))

@@ -25,11 +25,24 @@ public class ControlJugador : MonoBehaviour
     private ControlHUD controlHUD;
     Quaternion rotacion;
 
+    public GameObject controlador;
+    public ControlGlobal controlGlobalScript;
+    
+
     void Start()
     {
         controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
         transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        
+        controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        if (controlGlobalScript != null)
+        {
+            vida = controlGlobalScript.Vidas;           
+        }else{
+            GameObject nuevoControl = Instantiate(controlador);
+            controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
+        }
     }
 
     void Update()
@@ -118,8 +131,12 @@ public class ControlJugador : MonoBehaviour
     {
         vida--;
         controlHUD.QuitarCorazon();
+        controlGlobalScript.Vidas = vida;
         if (vida <= 0)
+        {
+            controlGlobalScript.Resetear();
             SceneManager.LoadScene("Gameover");
+        }
     }
 
     IEnumerator EsperarDano()

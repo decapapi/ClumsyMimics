@@ -33,7 +33,7 @@ public class ControlItems : MonoBehaviour
         if (!collectable || inventario.InventarioLleno())
             return;
 
-        inventario.AnyadirObjeto(tipoDeItem, id);
+        inventario.AnyadirObjetoExterno(tipoDeItem, id);
         Destroy(gameObject);
     }
 

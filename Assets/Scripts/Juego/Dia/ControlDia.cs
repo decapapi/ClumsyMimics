@@ -20,6 +20,9 @@ public class ControlDia : MonoBehaviour
     private const string horaInicio = "08:00";
     private const string horaFin = "20:00";
 
+    public GameObject controlador;
+    public ControlGlobal controlGlobalScript;
+
     void Start()
     {
         horaActual = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
@@ -27,8 +30,21 @@ public class ControlDia : MonoBehaviour
         InvokeRepeating("ActualizarContador", 0f, 1f);
         dia++;
         InvokeRepeating("ActualizarHora", 0f, 0.25f);
-    }
 
+        
+    }
+    void Awake()
+    {
+        controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        
+        if (controlGlobalScript != null)
+        {
+            BalasTotales = controlGlobalScript.Balas;
+        }else{
+            GameObject nuevoControl = Instantiate(controlador);
+            controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
+        }
+    }
     public int RecuentoBalas()
     {
         return BalasTotales;
@@ -37,6 +53,7 @@ public class ControlDia : MonoBehaviour
     {
         controlHUD.QuitarBala();
         BalasTotales--;
+        controlGlobalScript.Balas = BalasTotales;
     }
 
 
