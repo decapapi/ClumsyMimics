@@ -176,7 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd4d4964142098448702e491d39cb3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tipoDeItem: 2
+  tipoDeItem: 3
   cooldownRecoger: 1
   textura: {fileID: 6646434142888440387}
   sombra: {fileID: 7163199391027351467}

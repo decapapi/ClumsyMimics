@@ -32,7 +32,7 @@ public class ControlInventario : MonoBehaviour
         {
             if (inventoryIcons[i].sprite == null)
             {
-                inventoryIcons[i].sprite = Resources.Load<Sprite>("Arte/Escenas/Mapa/Enemigos/" + tipo);
+                inventoryIcons[i].sprite = Resources.Load<Sprite>("Arte/Items/" + tipo);
                 inventoryIcons[i].enabled = true;
                 objetosAlmacenados.Add(new ObjetoDeInventario { itemId = id, tipo = tipo, slot = i });
                 break;

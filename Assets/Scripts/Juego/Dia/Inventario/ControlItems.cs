@@ -13,10 +13,12 @@ public class ControlItems : MonoBehaviour
     public Vector3 tamanyoFinalSombra = new Vector3(0.4f, 0.06f, 1f);
     private ControlInventario inventario;
     private bool collectable = false;
-    private static int id = 0;
+    private static int numeroItems = 0;
+    private int id;
     void Start()
     {
-        id++;
+        numeroItems++;
+        id = numeroItems;
         inventario = FindObjectOfType<ControlInventario>();
         StartCoroutine(EmpezarCooldown());
         StartCoroutine(EmpezarAnimacion());
