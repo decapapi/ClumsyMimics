@@ -107,10 +107,10 @@ public class ControlRejillaMateriales : MonoBehaviour
 
     public void Craftear()
     {
-        if (material1.sprite.name == material2.sprite.name)
+        if (material1.sprite == null || material2.sprite == null)
             return;
 
-        if (material1.sprite == null || material2.sprite == null)
+        if (material1.sprite.name == material2.sprite.name)
             return;
 
         string arma1 = material1.sprite.name;

@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GeneradorNPCs : MonoBehaviour
 {
     public float tiempoSpawn = 10f;
-    public int maxNPCs = 10;
-    public int npcsSpawneados = 2;
+    public int maxNPCs;
     public GameObject npc;
     public Transform random;
     public Transform normal;
+    public Text textoClientes;
+    private int npcsSpawneados = 0;
     private Vector3 randomDestPos = new Vector3(350, 300, 1);
     private Vector3 normalDestPos = new Vector3(600, 300, 1);
     private ControlPedidos controlPedidos;
@@ -18,13 +20,18 @@ public class GeneradorNPCs : MonoBehaviour
 
     void Start()
     {
+        maxNPCs = Random.Range(4, 12);
         controlPedidos = GameObject.Find("Pedidos").GetComponent<ControlPedidos>();
-        StartCoroutine(SpawnearNPCConDelay(true, Random.Range(4, 7)));
-        StartCoroutine(SpawnearNPCConDelay(false, Random.Range(4, 7)));
+        StartCoroutine(SpawnearNPCConDelay(true, Random.Range(1, 5)));
+        StartCoroutine(SpawnearNPCConDelay(false, Random.Range(1, 5)));
+        ActualizarTextoClientes();
     }
 
     void SpawnearNPC(bool esRandom = false)
     {
+        if (npcsSpawneados >= maxNPCs)
+            return;
+
         if (esRandom)
         {
             randomNPC = Instantiate(npc, random.position, Quaternion.identity);
@@ -37,11 +44,19 @@ public class GeneradorNPCs : MonoBehaviour
             normalNPC.transform.SetParent(transform);
             StartCoroutine(MoverNPC(normalNPC.transform, normalDestPos, false));
         }
+
+        npcsSpawneados++;
+        ActualizarTextoClientes();
     }
 
     public void BorrarNPC(bool randomNPC)
     {
         StartCoroutine(AnimacionBorrarNPC(randomNPC));
+    }
+
+    private void ActualizarTextoClientes()
+    {
+        textoClientes.text = "Clientes potenciales: " + (maxNPCs - npcsSpawneados);
     }
 
     IEnumerator AnimacionBorrarNPC(bool esRandom)

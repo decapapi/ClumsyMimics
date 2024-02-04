@@ -15,9 +15,11 @@ public class ControlPedidos : MonoBehaviour
     private GeneradorNPCs generadorNPCs;
     public static int dinero = 0;
     public Text dineroTexto;
+    private AudioSource sonidoVender;
 
     void Start()
     {
+        sonidoVender = GameObject.Find("Vender").GetComponent<AudioSource>();
         generadorNPCs = GameObject.Find("Generador NPCs").GetComponent<GeneradorNPCs>();
         bocadilloPedidoRandom.localScale = Vector3.zero;
         bocadilloPedidoNormal.localScale = Vector3.zero;
@@ -80,6 +82,7 @@ public class ControlPedidos : MonoBehaviour
         }
 
         if (productoVendido) {
+            sonidoVender.Play();
             CerrarPedidoRandom();
             generadorNPCs.BorrarNPC(true);
             StartCoroutine(generadorNPCs.SpawnearNPCConDelay(true, Random.Range(4, 7)));
@@ -97,6 +100,7 @@ public class ControlPedidos : MonoBehaviour
         if (imagenResultado.sprite.name == productoPedido) // 250
         {
             dinero += 250;
+            sonidoVender.Play();
             imagenResultado.sprite = null;
             imagenResultado.enabled = false;
             CerrarPedidoNormal();
