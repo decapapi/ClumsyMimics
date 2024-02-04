@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &9217537872317088968
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4289879010389860221}
+  - component: {fileID: -2427816319255268827}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4289879010389860221
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217537872317088968}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-2427816319255268827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9217537872317088968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1aa124e0ab2ba47964a48bb0b1bc55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigos:
+  - {fileID: 498881820580101972, guid: 6fc4cb6c5bd477b439311e1d10231f5d, type: 3}
+  - {fileID: 498881820580101972, guid: 3f818c9db35e773408eb57ba03191436, type: 3}
+  - {fileID: 498881820580101972, guid: 0e62ea718a9a61943812cd16cb801968, type: 3}
+  - {fileID: 498881820580101972, guid: d43863ba7e075c14e9ef74eb202cc77e, type: 3}
+  objetos:
+  - {fileID: 3169594947008430097, guid: 08b30c68fd7f517408773d7f24b646a0, type: 3}
+  - {fileID: 3169594947008430097, guid: 04108790c78c1ba47b0cd83e1239afce, type: 3}
+  - {fileID: 3169594947008430097, guid: fe7ecddb3d6909e44bcbc7f172084420, type: 3}
+  - {fileID: 3169594947008430097, guid: 94f37be701811fe49bee6d661cfb56c3, type: 3}
