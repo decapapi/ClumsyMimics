@@ -55,12 +55,10 @@ public class ControlJugador : MonoBehaviour
             inputMovimiento.x = -1;
             rotacion = Quaternion.Euler(0, 0, 180);
         }
-
         if (Input.GetKeyDown(KeyCode.E) && puedeDashear)
         {
             StartCoroutine(Dash());
         }
-
         Mover(inputMovimiento);
 
         if (transform.position.x > -6f && transform.position.x < -2f && transform.position.y > -3f && transform.position.y < 2f)
@@ -108,13 +106,10 @@ public class ControlJugador : MonoBehaviour
                 estaDasheando = false;
             }
         }
-        
-        rb.velocity = direccion.normalized * velocidadActual;
+        //rb.velocity = direccion.normalized * velocidadActual;
         transform.position += direccion.normalized * Time.deltaTime * velocidadActual;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(Vector3.forward * angulo);
-        
-        
     }
 
     private void RecibirDano(float dano)
