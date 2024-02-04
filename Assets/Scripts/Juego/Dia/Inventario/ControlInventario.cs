@@ -51,6 +51,9 @@ public class ControlInventario : MonoBehaviour
 
     public void AnyadirObjetoExterno(string tipo, int id)
     {
+        if (InventarioLleno() || ItemExiste(id))
+            return;
+
         AnyadirObjeto(tipo, id);
         controlGlobalScript.ObjetosGuardados[numeroItems] = tipo;
         numeroItems++;

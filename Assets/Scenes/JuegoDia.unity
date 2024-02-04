@@ -1206,6 +1206,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 11624334}
   transitionTime: 1
+  controlador: {fileID: 0}
+  controlGlobalScript: {fileID: 0}
+  dias: 0
 --- !u!225 &213838014
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -8742,6 +8745,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 11624334}
   transitionTime: 1
+  controlador: {fileID: 0}
+  controlGlobalScript: {fileID: 0}
+  dias: 0
 --- !u!114 &1564036122
 MonoBehaviour:
   m_ObjectHideFlags: 0
