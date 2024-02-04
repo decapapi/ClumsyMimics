@@ -314,8 +314,8 @@ RectTransform:
   - {fileID: 724901562}
   - {fileID: 766101322}
   - {fileID: 768450369}
-  - {fileID: 737968165}
   - {fileID: 1735630040}
+  - {fileID: 737968165}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -337,6 +337,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 737968161}
   transitionTime: 1
+  controlador: {fileID: 0}
+  controlGlobalScript: {fileID: 0}
+  dias: 0
 --- !u!114 &213838014
 MonoBehaviour:
   m_ObjectHideFlags: 0
