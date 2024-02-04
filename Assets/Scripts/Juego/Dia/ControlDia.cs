@@ -40,6 +40,7 @@ public class ControlDia : MonoBehaviour
         if (controlGlobalScript != null)
         {
             BalasTotales = controlGlobalScript.Balas;
+            controlGlobalScript.dias++;
         }else{
             GameObject nuevoControl = Instantiate(controlador);
             controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();

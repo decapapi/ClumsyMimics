@@ -9,6 +9,8 @@ public class ControlGlobal : MonoBehaviour
     public  int Vidas { get; set; } = 5;
     public  int Dinero { get; set; } = 0;
 
+    public int dias { get; set; } = 0;
+
     private void Awake() 
     {
         DontDestroyOnLoad(this.gameObject);
@@ -25,5 +27,6 @@ public class ControlGlobal : MonoBehaviour
         Balas = 5;
         Vidas = 5;
         Dinero = 0;
+        dias = 0;
     }
 }

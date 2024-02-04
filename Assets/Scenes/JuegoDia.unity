@@ -8706,7 +8706,7 @@ MonoBehaviour:
   item2: {fileID: 3169594947008430097, guid: 04108790c78c1ba47b0cd83e1239afce, type: 3}
   item3: {fileID: 3169594947008430097, guid: fe7ecddb3d6909e44bcbc7f172084420, type: 3}
   item4: {fileID: 3169594947008430097, guid: 94f37be701811fe49bee6d661cfb56c3, type: 3}
-  controlador: {fileID: 0}
+  controlador: {fileID: 6465700938221393970, guid: de07f799b5f796e449fdfa951bae6e54, type: 3}
   controlGlobalScript: {fileID: 0}
 --- !u!1 &1564036120
 GameObject:
@@ -11973,7 +11973,7 @@ MonoBehaviour:
   tiempoRestante: 180
   contador: {fileID: 263932606}
   menuPausa: {fileID: 984000570}
-  controlador: {fileID: 0}
+  controlador: {fileID: 6465700938221393970, guid: de07f799b5f796e449fdfa951bae6e54, type: 3}
   controlGlobalScript: {fileID: 0}
 --- !u!114 &2105788230
 MonoBehaviour:
@@ -12228,8 +12228,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11624334}
     - target: {fileID: 7624623058607254026, guid: 6d5aeefae074a8343a9252de84207b86, type: 3}
+      propertyPath: controlador
+      value: 
+      objectReference: {fileID: 6465700938221393970, guid: de07f799b5f796e449fdfa951bae6e54, type: 3}
+    - target: {fileID: 7624623058607254026, guid: 6d5aeefae074a8343a9252de84207b86, type: 3}
       propertyPath: dashDuration
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7624623058607254026, guid: 6d5aeefae074a8343a9252de84207b86, type: 3}
+      propertyPath: controlGlobalScript
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7688267923662826912, guid: 6d5aeefae074a8343a9252de84207b86, type: 3}
       propertyPath: m_LocalPosition.x

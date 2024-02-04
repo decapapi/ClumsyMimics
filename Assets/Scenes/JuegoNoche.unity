@@ -427,7 +427,7 @@ MonoBehaviour:
   - {fileID: 1084960258}
   - {fileID: 64832813}
   - {fileID: 22037013}
-  controlador: {fileID: 0}
+  controlador: {fileID: 6465700938221393970, guid: de07f799b5f796e449fdfa951bae6e54, type: 3}
   controlGlobalScript: {fileID: 0}
 --- !u!1 &64832810
 GameObject:
@@ -1315,6 +1315,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 126416543}
   transitionTime: 1
+  controlador: {fileID: 0}
+  controlGlobalScript: {fileID: 0}
+  dias: 0
 --- !u!82 &213838014
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2867,7 +2870,7 @@ MonoBehaviour:
   imagenMaterial1: {fileID: 127104837}
   imagenMaterial2: {fileID: 1946898370}
   dineroTexto: {fileID: 1578017171}
-  controlador: {fileID: 0}
+  controlador: {fileID: 6465700938221393970, guid: de07f799b5f796e449fdfa951bae6e54, type: 3}
   controlGlobalScript: {fileID: 0}
 --- !u!224 &957726201 stripped
 RectTransform:
