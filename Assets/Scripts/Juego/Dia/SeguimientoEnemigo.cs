@@ -9,6 +9,8 @@ public class SeguimientoEnemigo : MonoBehaviour
 
     private float distancia;
     public float distanciaAtaque = 35f;
+    public float rotacion = 0f; 
+    public GameObject tipo;
     void Start()
     {
     }
@@ -17,10 +19,11 @@ public class SeguimientoEnemigo : MonoBehaviour
         distancia = Vector2.Distance(jugador.transform.position, transform.position);
         Vector2 direccion = (jugador.transform.position - transform.position).normalized;
         float angulo = Mathf.Atan2(direccion.y, direccion.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(Vector3.forward * angulo + new Vector3(0, 0, rotacion));
         if (distancia < distanciaAtaque)
         {
             transform.position = Vector2.MoveTowards(this.transform.position, jugador.transform.position, velocidad * Time.deltaTime);
-            transform.rotation = Quaternion.Euler(Vector3.forward * angulo + new Vector3(0, 0, -90f));
+            transform.rotation = Quaternion.Euler(Vector3.forward * angulo + new Vector3(0, 0, rotacion));
         }
     }
 }

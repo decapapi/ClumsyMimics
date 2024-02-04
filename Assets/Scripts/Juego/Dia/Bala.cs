@@ -9,6 +9,7 @@ public class Bala : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemigo"))
         {
+            loot = other.gameObject.GetComponent<SeguimientoEnemigo>().tipo;
             Destroy(other.gameObject);
             Destroy(gameObject);
             Instantiate(loot, transform.position, Quaternion.identity);
