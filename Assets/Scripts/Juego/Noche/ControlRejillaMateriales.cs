@@ -31,7 +31,7 @@ public class ControlRejillaMateriales : MonoBehaviour
         {
             if (rejillas[i].sprite == null)
             {
-                rejillas[i].sprite = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + arma);
+                rejillas[i].sprite = Resources.Load<Sprite>("Arte/Items/" + arma);
                 rejillas[i].enabled = true;
                 armasAlmacenadas.Add(new KeyValuePair<string, int>(arma, i));
                 break;
@@ -74,12 +74,12 @@ public class ControlRejillaMateriales : MonoBehaviour
 
         if (material1.sprite == null)
         {
-            material1.sprite = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + arma);
+            material1.sprite = Resources.Load<Sprite>("Arte/Items/" + arma);
             material1.enabled = true;
         }
         else if (material2.sprite == null)
         {
-            material2.sprite = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + arma);
+            material2.sprite = Resources.Load<Sprite>("Arte/Items/" + arma);
             material2.enabled = true;
         }
     }
@@ -113,10 +113,10 @@ public class ControlRejillaMateriales : MonoBehaviour
         string arma1 = material1.sprite.name;
         string arma2 = material2.sprite.name;
 
-        Sprite imagenResultado = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + arma1 + arma2);
+        Sprite imagenResultado = Resources.Load<Sprite>("Arte/Items/" + arma1 + arma2);
 
         if (imagenResultado == null)
-            imagenResultado = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + arma2 + arma1);
+            imagenResultado = Resources.Load<Sprite>("Arte/Items/" + arma2 + arma1);
             
         resultado.sprite = imagenResultado;
         resultado.enabled = true;

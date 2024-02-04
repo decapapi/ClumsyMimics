@@ -10,28 +10,65 @@ public class GeneradorNPCs : MonoBehaviour
     public GameObject npc;
     public Transform random;
     public Transform normal;
-    private Vector3 randomDestPos = new Vector3(350, 250, 1);
-    private Vector3 normalDestPos = new Vector3(600, 250, 1);
+    private Vector3 randomDestPos = new Vector3(350, 300, 1);
+    private Vector3 normalDestPos = new Vector3(600, 300, 1);
     private ControlPedidos controlPedidos;
+    private GameObject randomNPC;
+    private GameObject normalNPC;
 
     void Start()
     {
         controlPedidos = GameObject.Find("Pedidos").GetComponent<ControlPedidos>();
-        StartCoroutine(SpawnearNPCConDelay(true, Random.Range(5, 10)));
-        StartCoroutine(SpawnearNPCConDelay(false, Random.Range(5, 10)));
+        StartCoroutine(SpawnearNPCConDelay(true, Random.Range(4, 7)));
+        StartCoroutine(SpawnearNPCConDelay(false, Random.Range(4, 7)));
     }
 
-    void SpawnearNPC(bool randomNPC = false)
+    void SpawnearNPC(bool esRandom = false)
     {
-        GameObject nuevoNPC = Instantiate(npc, randomNPC ? random.position : normal.position, Quaternion.identity);
-        nuevoNPC.transform.SetParent(transform);
-        StartCoroutine(MoverNPC(nuevoNPC.transform, randomNPC ? randomDestPos : normalDestPos, randomNPC));
+        if (esRandom)
+        {
+            randomNPC = Instantiate(npc, random.position, Quaternion.identity);
+            randomNPC.transform.SetParent(transform);
+            StartCoroutine(MoverNPC(randomNPC.transform, randomDestPos, true));
+        }
+        else
+        {
+            normalNPC = Instantiate(npc, normal.position, Quaternion.identity);
+            normalNPC.transform.SetParent(transform);
+            StartCoroutine(MoverNPC(normalNPC.transform, normalDestPos, false));
+        }
+    }
+
+    public void BorrarNPC(bool randomNPC)
+    {
+        StartCoroutine(AnimacionBorrarNPC(randomNPC));
+    }
+
+    IEnumerator AnimacionBorrarNPC(bool esRandom)
+    {
+        GameObject objetoNpc = esRandom ? randomNPC : normalNPC;
+
+        float elapsedTime = 0f;
+        float tiempoMovimiento = 3f;
+        Vector3 startingPos = objetoNpc.transform.position;
+        Vector3 destino = esRandom ? random.position : normal.position;
+
+        while (elapsedTime < tiempoMovimiento)
+        {
+            objetoNpc.transform.position = Vector3.Lerp(startingPos, destino, elapsedTime / tiempoMovimiento);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        objetoNpc.transform.position = destino;
+
+        Destroy(objetoNpc);
     }
 
     IEnumerator MoverNPC(Transform npcTransform, Vector3 destino, bool randomNPC)
     {
         float elapsedTime = 0f;
-        float tiempoMovimiento = 5f;
+        float tiempoMovimiento = 4f;
         Vector3 startingPos = npcTransform.position;
 
         while (elapsedTime < tiempoMovimiento)
@@ -48,7 +85,7 @@ public class GeneradorNPCs : MonoBehaviour
             controlPedidos.GenerarPedidoNormal();
     }
 
-    IEnumerator SpawnearNPCConDelay(bool randomNPC, float delay)
+    public IEnumerator SpawnearNPCConDelay(bool randomNPC, float delay)
     {
         yield return new WaitForSeconds(delay);
         SpawnearNPC(randomNPC);

@@ -43,7 +43,7 @@ public class ControlPedidos : MonoBehaviour
 
         string[] numeros = { "12", "13", "14", "23", "24", "34" };
         productoPedido = numeros[Random.Range(0, numeros.Length)];
-        Sprite pedido = Resources.Load<Sprite>("Arte/provisional/Objetosprovisionales/" + productoPedido);
+        Sprite pedido = Resources.Load<Sprite>("Arte/Items/" + productoPedido);
 
         imagenPedidoNormal.sprite = pedido;
         imagenPedidoNormal.enabled = true;
@@ -79,8 +79,11 @@ public class ControlPedidos : MonoBehaviour
             dinero += 25;
         }
 
-        if (productoVendido)
+        if (productoVendido) {
             CerrarPedidoRandom();
+            generadorNPCs.BorrarNPC(true);
+            StartCoroutine(generadorNPCs.SpawnearNPCConDelay(true, Random.Range(4, 7)));
+        }
     }
 
     public void VenderProductoNormal()
@@ -97,7 +100,23 @@ public class ControlPedidos : MonoBehaviour
             imagenResultado.sprite = null;
             imagenResultado.enabled = false;
             CerrarPedidoNormal();
+            generadorNPCs.BorrarNPC(false);
+            StartCoroutine(generadorNPCs.SpawnearNPCConDelay(false, Random.Range(4, 7)));
         }
+    }
+
+    public void CancelarPedidoRandom()
+    {
+        CerrarPedidoRandom();
+        generadorNPCs.BorrarNPC(true);
+        StartCoroutine(generadorNPCs.SpawnearNPCConDelay(true, Random.Range(4, 7)));
+    }
+
+    public void CancelarPedidoNormal()
+    {
+        CerrarPedidoNormal();
+        generadorNPCs.BorrarNPC(false);
+        StartCoroutine(generadorNPCs.SpawnearNPCConDelay(false, Random.Range(4, 7)));
     }
 
     public void CerrarPedidoRandom()
