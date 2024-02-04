@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,8 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class ControlDia : MonoBehaviour
 {
-    public float tiempoRestante = 180f; // Establece el tiempo total del juego en segundos (180 segundos = 3 minutos)
+    public float tiempoRestante = 180f;
     public Text contador;
+    private DateTime horaActual;
     private bool isGamePaused = false;
     public GameObject menuPausa;
     private static int dia = 0;
@@ -20,9 +22,11 @@ public class ControlDia : MonoBehaviour
 
     void Start()
     {
+        horaActual = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
         controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
         InvokeRepeating("ActualizarContador", 0f, 1f);
         dia++;
+        InvokeRepeating("ActualizarHora", 0f, 0.25f);
     }
 
     public int RecuentoBalas()
@@ -64,21 +68,16 @@ public class ControlDia : MonoBehaviour
     {
         if (!isGamePaused)
         {
-            tiempoRestante -= Time.deltaTime;
-
-            // Calcular horas y minutos a partir del tiempo restante
-            int horas = Mathf.FloorToInt(tiempoRestante / 3600);
-            int minutos = Mathf.FloorToInt((tiempoRestante % 3600) / 60);
-            string tiempoFormateado = $"{horas:D2}:{minutos:D2}";
-
-            // Actualizar el texto en pantalla
-            contador.text = tiempoFormateado;
+            tiempoRestante--;
 
             if (tiempoRestante <= 0f)
-            {
-                // Si se acaba el tiempo, se acaba el juego
                 SceneManager.LoadScene("Gameover");
-            }
         }
+    }
+
+    void ActualizarHora()
+    {
+        contador.text = horaActual.ToString("HH:mm") + "h";
+        horaActual = horaActual.AddMinutes(1);
     }
 }
