@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControlItems : MonoBehaviour
 {
+    public float desplazamiento = 0.25f;
     public string tipoDeItem;
     public float cooldownRecoger = 1f;
 
@@ -53,7 +54,7 @@ public class ControlItems : MonoBehaviour
             float animationDuration = 1.5f;
             Vector3 initialTexturePosition = textura.position;
 
-            Vector3 targetTexturePosition = new Vector3(textura.position.x, textura.position.y + 0.25f, textura.position.z);
+            Vector3 targetTexturePosition = new Vector3(textura.position.x, textura.position.y + desplazamiento, textura.position.z);
 
             while (elapsedTime < animationDuration)
             {
@@ -67,7 +68,7 @@ public class ControlItems : MonoBehaviour
             elapsedTime = 0f;
             initialTexturePosition = textura.position;
 
-            targetTexturePosition = new Vector3(textura.position.x, textura.position.y - 0.25f, textura.position.z);
+            targetTexturePosition = new Vector3(textura.position.x, textura.position.y - desplazamiento, textura.position.z);
 
             while (elapsedTime < animationDuration)
             {
