@@ -31,7 +31,7 @@ public class ControlPedidos : MonoBehaviour
 
     void ActualizarDinerotexto()
     {
-        dineroTexto.text = "AHORROS: " + dinero.ToString() + " pesetas";
+        dineroTexto.text = "Ahorros: " + dinero.ToString() + " pesetas";
     }
 
     public void GenerarPedidoRandom()
