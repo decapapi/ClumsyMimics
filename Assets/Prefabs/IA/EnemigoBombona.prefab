@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 0}
-  velocidad: 8
+  velocidad: 7
   distanciaAtaque: 5
   rotacion: -90
   tipo: {fileID: 3169594947008430097, guid: 08b30c68fd7f517408773d7f24b646a0, type: 3}
