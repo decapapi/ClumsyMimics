@@ -13,18 +13,15 @@ public class ControlRejillaMateriales : MonoBehaviour
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
-
+    private bool inventarioGuardado = false;
     void Start()
     {
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
         if (controlGlobalScript != null)
         {
-            for (int i = 0; i < controlGlobalScript.ObjetosGuardados.Length; i++)
+            for (int i = 0; i < controlGlobalScript.NumeroObjetos; i++)
             {
-                if (controlGlobalScript.ObjetosGuardados[i] != null && controlGlobalScript.ObjetosGuardados[i] != "" && controlGlobalScript.ObjetosGuardados[i] != "0")
-                {
-                    AnyadirArmaARejilla(controlGlobalScript.ObjetosGuardados[i]);
-                }
+                AnyadirArmaARejilla(controlGlobalScript.ObjetosGuardados[i]);
             }
         }
         else
@@ -71,6 +68,7 @@ public class ControlRejillaMateriales : MonoBehaviour
             return;
 
         armasAlmacenadas.Remove(arma);
+
         rejillas[slot].sprite = null;
         rejillas[slot].enabled = false;
 
@@ -131,28 +129,27 @@ public class ControlRejillaMateriales : MonoBehaviour
         material2.sprite = null;
         material2.enabled = false;
         
-        string[] copia = new string[8];
-        bool arma1encontrada = false;  
-        bool arma2encontrada = false;
-        for (int i = 0; i < armasAlmacenadas.Count; i++)
-        {
-            if (armasAlmacenadas[i] == arma1 && !arma1encontrada)
-            {
-                arma1encontrada = true;
-                continue;
-            }
-            if (armasAlmacenadas[i] == arma2 && !arma2encontrada)
-            {
-                arma2encontrada = true;
-                continue;
-            }
-            copia[i] = armasAlmacenadas[i];
-        }
-        controlGlobalScript.ObjetosGuardados = copia;
+        controlGlobalScript.QuitarObjeto(material1.sprite.name);
+        controlGlobalScript.QuitarObjeto(material2.sprite.name);
     }
 
     public bool InventarioLleno()
     {
         return armasAlmacenadas.Count >= 8;
+    }
+
+    public void GuardarInventario()
+    {
+        if (inventarioGuardado)
+            return;
+        controlGlobalScript.VaciarObjetos();
+        for (int i = 0; i < rejillas.Length; i++)
+        {
+            if (rejillas[i].sprite != null)
+            {
+                controlGlobalScript.AnyadirObjeto(rejillas[i].sprite.name);
+            }
+        }
+        inventarioGuardado = true;
     }
 }

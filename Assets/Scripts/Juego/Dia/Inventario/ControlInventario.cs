@@ -12,12 +12,10 @@ public class ControlInventario : MonoBehaviour
     public GameObject item3;
     public GameObject item4;
     private int slotsMaximos = 8;
-    private bool jugadorEnElInventario = false;
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
 
-    private int numeroItems = 0;
     private class ObjetoDeInventario
     {
         public int itemId;
@@ -25,21 +23,17 @@ public class ControlInventario : MonoBehaviour
         public int slot;
     }
 
-    
-    private List<ObjetoDeInventario> objetosAlmacenados = new List<ObjetoDeInventario>();
+    private List<ObjetoDeInventario> objetosAlmacenados;
 
     void Start()
     {
+        objetosAlmacenados = new List<ObjetoDeInventario>();
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
         if (controlGlobalScript != null)
         {
-            for (int i = 0; i < controlGlobalScript.ObjetosGuardados.Length; i++)
+            for (int i = 0; i < controlGlobalScript.NumeroObjetos; i++)
             {
-                if (controlGlobalScript.ObjetosGuardados[i] != null && controlGlobalScript.ObjetosGuardados[i] != "" && controlGlobalScript.ObjetosGuardados[i] != "0")
-                {
-                    AnyadirObjeto(controlGlobalScript.ObjetosGuardados[i], i + 9999);
-                    numeroItems++;
-                }
+                AnyadirObjeto(controlGlobalScript.ObjetosGuardados[i], i + 9999);
             }
         }
         else
@@ -54,13 +48,14 @@ public class ControlInventario : MonoBehaviour
         if (InventarioLleno() || ItemExiste(id))
             return;
 
-        AnyadirObjeto(tipo, id);
-        controlGlobalScript.ObjetosGuardados[numeroItems] = tipo;
-        numeroItems++;
+        AnyadirObjeto(tipo, id, true);
     }
-    public void AnyadirObjeto(string tipo, int id)
+    public void AnyadirObjeto(string tipo, int id, bool externo = false)
     {
         if (InventarioLleno() || ItemExiste(id))
+            return;
+
+        if (externo && !controlGlobalScript.AnyadirObjeto(tipo))
             return;
 
         for (int i = 0; i < slotsMaximos; i++)
@@ -88,7 +83,8 @@ public class ControlInventario : MonoBehaviour
         inventoryIcons[slot].sprite = null;
         inventoryIcons[slot].enabled = false;
         objetosAlmacenados.Remove(objetoEliminado);
-   
+        controlGlobalScript.QuitarObjeto(objetoEliminado.tipo);
+
         GameObject itemPrefab = null;
         switch (objetoEliminado.tipo) {
             case "1":
@@ -106,9 +102,7 @@ public class ControlInventario : MonoBehaviour
         }
 
         Vector3 posDropear;
-        do {
-            posDropear = transformJugador.position + Random.insideUnitSphere * 2f;
-        } while (Vector3.Distance(posDropear, transformJugador.position) < 1f);
+        posDropear = transformJugador.position + Random.insideUnitSphere * 2f;
 
         Instantiate(itemPrefab, new Vector3(posDropear.x, posDropear.y, 0f), Quaternion.identity);
     }
@@ -120,16 +114,6 @@ public class ControlInventario : MonoBehaviour
 
     public bool InventarioLleno()
     {
-        return objetosAlmacenados.Count >= slotsMaximos;
-    }
-
-    public bool JugadorEnElInventario()
-    {
-        return jugadorEnElInventario;
-    }
-
-     public void ToggleJugadorEnElInventario()
-    {
-        jugadorEnElInventario = !jugadorEnElInventario;
+        return controlGlobalScript.NumeroObjetos >= slotsMaximos;
     }
 }

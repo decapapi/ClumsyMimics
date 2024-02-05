@@ -72,6 +72,7 @@ public class ControlPedidos : MonoBehaviour
 
         if (imagenResultado.sprite != null) // 75
         {
+            controlGlobalScript.QuitarObjeto(imagenResultado.sprite.name);
             imagenResultado.sprite = null;
             imagenResultado.enabled = false;
             productoVendido = true;
@@ -79,6 +80,7 @@ public class ControlPedidos : MonoBehaviour
         }
         if (imagenMaterial1.sprite != null) // 25
         {
+            controlGlobalScript.QuitarObjeto(imagenMaterial1.sprite.name);
             imagenMaterial1.sprite = null;
             imagenMaterial1.enabled = false;
             productoVendido = true;
@@ -87,6 +89,7 @@ public class ControlPedidos : MonoBehaviour
 
         if (imagenMaterial2.sprite != null) // 25
         {
+            controlGlobalScript.QuitarObjeto(imagenMaterial2.sprite.name);
             imagenMaterial2.sprite = null;
             imagenMaterial2.enabled = false;
             productoVendido = true;
@@ -113,6 +116,7 @@ public class ControlPedidos : MonoBehaviour
 
         if (imagenResultado.sprite.name == productoPedido) // 250
         {
+            controlGlobalScript.QuitarObjeto(imagenResultado.sprite.name);
             dinero += 250;
             sonidoVender.Play();
             imagenResultado.sprite = null;
