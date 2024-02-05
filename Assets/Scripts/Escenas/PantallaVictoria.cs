@@ -10,6 +10,8 @@ public class Victoria : MonoBehaviour
     public int puntuacion;
     private ControlEscenas controlEscenas;
 
+    public GameObject texto;
+
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
 
@@ -20,6 +22,7 @@ public class Victoria : MonoBehaviour
         if (controlGlobalScript != null)
         {
             puntuacion = controlGlobalScript.Dinero;
+            texto.GetComponent<Text>().text = puntuacion.ToString();
         }
         else
         {

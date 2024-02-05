@@ -32,10 +32,12 @@ public class ControlEscenas : MonoBehaviour
 
     public void CargarEscena(string nombreEscena)
     {
+        
         if (dias != 3)
         {
             StartCoroutine(Transition(nombreEscena));
         }else{
+            controlGlobalScript.dias = 0;
             StartCoroutine(Transition("Victoria"));
         }
         

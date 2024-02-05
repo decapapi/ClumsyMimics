@@ -12,6 +12,9 @@ public class GeneradorNPCs : MonoBehaviour
     public Transform normal;
     public Text textoClientes;
     private int npcsSpawneados = 0;
+
+    public GameObject posrandom;
+    public GameObject posnormal;
     private Vector3 randomDestPos = new Vector3(350, 300, 1);
     private Vector3 normalDestPos = new Vector3(600, 300, 1);
     private ControlPedidos controlPedidos;
@@ -36,13 +39,13 @@ public class GeneradorNPCs : MonoBehaviour
         {
             randomNPC = Instantiate(npc, random.position, Quaternion.identity);
             randomNPC.transform.SetParent(transform);
-            StartCoroutine(MoverNPC(randomNPC.transform, randomDestPos, true));
+            StartCoroutine(MoverNPC(randomNPC.transform, posrandom.transform.position, true));
         }
         else
         {
             normalNPC = Instantiate(npc, normal.position, Quaternion.identity);
             normalNPC.transform.SetParent(transform);
-            StartCoroutine(MoverNPC(normalNPC.transform, normalDestPos, false));
+            StartCoroutine(MoverNPC(normalNPC.transform, posnormal.transform.position, false));
         }
 
         npcsSpawneados++;

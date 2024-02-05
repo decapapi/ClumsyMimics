@@ -54,7 +54,7 @@ public class ControlDia : MonoBehaviour
     {
         controlHUD.QuitarBala();
         BalasTotales--;
-        controlGlobalScript.Balas = BalasTotales;
+        
     }
 
 

@@ -9,7 +9,18 @@ public class ControlNPC : MonoBehaviour
     private Image imagen;
     void Start()
     {
-        imagen = GetComponent<Image>();
-        imagen.sprite = imagenes[Random.Range(0, imagenes.Length)];
+        if (Screen.fullScreen == false)
+        {
+            imagen = GetComponent<Image>();
+            imagen.sprite = imagenes[Random.Range(0, imagenes.Length)];
+        }
+        else
+        {
+            imagen = GetComponent<Image>();
+            imagen.sprite = imagenes[Random.Range(0, imagenes.Length)];
+            imagen.rectTransform.sizeDelta = imagen.rectTransform.sizeDelta * 2;
+        }
+        
+        
     }
 }
