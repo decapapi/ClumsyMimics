@@ -25,9 +25,10 @@ public class ControlBalas : MonoBehaviour
 
         if (controlDia.RecuentoBalas() >= 5)
             return;
-
-        controlDia.AnadirBala();
+            
         Destroy(gameObject);
+        controlDia.AnadirBala();
+        
     }
 
     private IEnumerator EmpezarAnimacion()
