@@ -8,21 +8,19 @@ public class Victoria : MonoBehaviour
 {
     public InputField input;
     public int puntuacion;
-    private ControlEscenas controlEscenas;
 
     public GameObject texto;
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
-
+    private bool puntacionGuardada = false;
     void Start()
     {
-        controlEscenas = FindObjectOfType<ControlEscenas>();
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
         if (controlGlobalScript != null)
         {
             puntuacion = controlGlobalScript.Dinero;
-            texto.GetComponent<Text>().text = puntuacion.ToString();
+            texto.GetComponent<Text>().text = puntuacion.ToString("D5");
         }
         else
         {
@@ -31,16 +29,12 @@ public class Victoria : MonoBehaviour
         }
     }
 
-    public void CambiarEscena()
-    {
-        if (string.IsNullOrEmpty(input.text))
+    public void GuardarPuntuacion()
+    {   
+        if (puntacionGuardada)
             return;
-        
-        GuardarPuntuacion(input.text, puntuacion);
-
-        controlGlobalScript.Resetear();
-
-        controlEscenas.CargarEscena("Inicio");
+        puntacionGuardada = true;
+        GuardarPuntuacion(string.IsNullOrEmpty(input.text) ? "Desconocido" : input.text, puntuacion);
     }
 
     private void GuardarPuntuacion(string nombreJugador, int puntuacion)
