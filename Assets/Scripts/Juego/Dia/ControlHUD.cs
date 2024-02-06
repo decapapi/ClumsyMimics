@@ -65,6 +65,16 @@ public class ControlHUD : MonoBehaviour
         controlGlobalScript.Balas = balasRestantes;
     }
 
+    public void AnadirBala()
+    {
+        if (balasRestantes >= 5)
+            return;
+        
+        balas[balasRestantes].enabled = true;
+        balasRestantes++;
+        controlGlobalScript.Balas = balasRestantes;
+    }
+
     public void QuitarCorazon()
     {
         if (corazonesRestante <= 0)

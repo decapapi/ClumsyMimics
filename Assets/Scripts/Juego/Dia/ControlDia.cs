@@ -52,9 +52,12 @@ public class ControlDia : MonoBehaviour
     {
         controlHUD.QuitarBala();
         BalasTotales--;
-        
     }
-
+    public void AnadirBala()
+    {
+        controlHUD.AnadirBala();
+        BalasTotales++;
+    }
 
     void Update()
     {
