@@ -11618,7 +11618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e35a859a09712a4ea7965edd3e92bce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tiempoRestante: 10
+  tiempoRestante: 180
   contador: {fileID: 263932606}
   menuPausa: {fileID: 984000570}
   inventario: {fileID: 1541156632}
