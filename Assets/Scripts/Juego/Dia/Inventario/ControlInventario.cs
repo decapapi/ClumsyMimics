@@ -12,6 +12,7 @@ public class ControlInventario : MonoBehaviour
     public GameObject item3;
     public GameObject item4;
     private int slotsMaximos = 8;
+    private AudioSource audioSource;
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
@@ -29,6 +30,7 @@ public class ControlInventario : MonoBehaviour
     {
         objetosAlmacenados = new List<ObjetoDeInventario>();
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        audioSource = GetComponent<AudioSource>();
         if (controlGlobalScript != null)
         {
             for (int i = 0; i < controlGlobalScript.NumeroObjetos; i++)
@@ -65,6 +67,9 @@ public class ControlInventario : MonoBehaviour
                 inventoryIcons[i].sprite = Resources.Load<Sprite>("Arte/Items/" + tipo);
                 inventoryIcons[i].enabled = true;
                 objetosAlmacenados.Add(new ObjetoDeInventario { itemId = id, tipo = tipo, slot = i });
+
+                var clip = Resources.Load("Sonido/Recoger objeto") as AudioClip;
+                audioSource.PlayOneShot(clip);
                 break;
             }
         }
@@ -105,6 +110,8 @@ public class ControlInventario : MonoBehaviour
         posDropear = transformJugador.position + Random.insideUnitSphere * 2f;
 
         Instantiate(itemPrefab, new Vector3(posDropear.x, posDropear.y, 0f), Quaternion.identity);
+        var clip = Resources.Load("Sonido/Dropear item") as AudioClip;
+        audioSource.PlayOneShot(clip);
     }
 
     public bool ItemExiste(int itemId)

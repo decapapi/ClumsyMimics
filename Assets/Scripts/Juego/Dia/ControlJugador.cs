@@ -27,16 +27,17 @@ public class ControlJugador : MonoBehaviour
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
-    private float transitionTime = 1f;
     public Animator transition;
     public ControlEscenas escenas;
     
+    private AudioSource audioSource;
 
     void Start()
     {
         controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
         transform = GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
         
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
         if (controlGlobalScript != null)
@@ -54,6 +55,8 @@ public class ControlJugador : MonoBehaviour
 
         if (tiempoEnTrigger >= 3f)
         {
+            var clip = Resources.Load("Sonido/Llaves o recoger objeto") as AudioClip;
+            audioSource.PlayOneShot(clip);
             escenas.CargarEscena("JuegoNoche");
         }
 
@@ -100,6 +103,8 @@ public class ControlJugador : MonoBehaviour
         {
             Vector2 diferencia = transform.position - other.transform.position;
             StartCoroutine(AplicarKnockback(diferencia));
+            var clip = Resources.Load("Sonido/Puñetazo") as AudioClip;
+            audioSource.PlayOneShot(clip);
             if (puedeRecibirDano)
             {
                 RecibirDano();
@@ -134,12 +139,22 @@ public class ControlJugador : MonoBehaviour
     {
         vida--;
         controlHUD.QuitarCorazon();
-        
+        StartCoroutine(SonidoDano());
+
         if (vida <= 0)
         {
+            var clip = Resources.Load("Sonido/Bidon gasolina 2") as AudioClip;
+            audioSource.PlayOneShot(clip);
             controlGlobalScript.Resetear();
             escenas.CargarEscena("GameOver");
         }
+    }
+
+    IEnumerator SonidoDano()
+    {
+        yield return new WaitForSeconds(0.1f);
+        var clip = Resources.Load("Sonido/Hombre dolor") as AudioClip;
+        audioSource.PlayOneShot(clip);
     }
 
     IEnumerator EsperarDano()
