@@ -13,10 +13,12 @@ public class ControlHUD : MonoBehaviour
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
+    private AudioSource audioSource;
 
     void Start()
     {
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
+        audioSource = GetComponent<AudioSource>();
         if (controlGlobalScript != null)
         {
             corazonesRestante = controlGlobalScript.Vidas;
@@ -59,7 +61,6 @@ public class ControlHUD : MonoBehaviour
     {
         if (balasRestantes <= 0)
             return;
-        
         balas[balasRestantes-1].enabled = false;
         balasRestantes--;
         controlGlobalScript.Balas = balasRestantes;
@@ -69,9 +70,10 @@ public class ControlHUD : MonoBehaviour
     {
         if (balasRestantes >= 5)
             return;
-        
         balas[balasRestantes].enabled = true;
         balasRestantes++;
+        var clip = Resources.Load("Sonido/Recoger objeto") as AudioClip;
+        audioSource.PlayOneShot(clip);
         controlGlobalScript.Balas = balasRestantes;
     }
 

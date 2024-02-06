@@ -32,6 +32,7 @@ public class ControlJugador : MonoBehaviour
     
     private AudioSource audioSource;
     private bool sonidoLlavesReproducido = false;
+    private bool sonidoPunetazoReproducido = false;
 
     void Start()
     {
@@ -105,8 +106,13 @@ public class ControlJugador : MonoBehaviour
         {
             Vector2 diferencia = transform.position - other.transform.position;
             StartCoroutine(AplicarKnockback(diferencia));
-            var clip = Resources.Load("Sonido/Puñetazo") as AudioClip;
-            audioSource.PlayOneShot(clip);
+            if (!sonidoPunetazoReproducido)
+            {
+                sonidoPunetazoReproducido = true;
+                var clip = Resources.Load("Sonido/Puñetazo") as AudioClip;
+                audioSource.PlayOneShot(clip);
+                StartCoroutine(SonidoPunetazo());
+            }
             if (puedeRecibirDano)
             {
                 RecibirDano();
@@ -114,6 +120,11 @@ public class ControlJugador : MonoBehaviour
                 StartCoroutine(EsperarDano());
             }
         }
+    }
+    IEnumerator SonidoPunetazo()
+    {
+        yield return new WaitForSeconds(0.5f);
+        sonidoPunetazoReproducido = false;
     }
 
     void Mover(Vector3 direccion)
@@ -186,6 +197,8 @@ public class ControlJugador : MonoBehaviour
         puedeDashear = false;
         estaDasheando = true;
         speedTransitionTimer = 0f;
+        var clip = Resources.Load("Sonido/dashalto") as AudioClip;
+        audioSource.PlayOneShot(clip);
         yield return new WaitForSeconds(dashDuration);
         estaDasheando = false;
         yield return new WaitForSeconds(dashCooldown);
