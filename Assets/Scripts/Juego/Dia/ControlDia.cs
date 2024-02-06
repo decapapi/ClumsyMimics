@@ -9,27 +9,18 @@ public class ControlDia : MonoBehaviour
 {
     public float tiempoRestante = 180f;
     public Text contador;
+    public Text contadorDias;
     private DateTime horaActual;
     private bool juegoPausado = false;
     public GameObject menuPausa;
     public GameObject inventario;
     public GameObject minimapa;
-    private static int dia = 0;
     private ControlHUD controlHUD;
     private AudioSource musicaDia;
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
 
-    void Start()
-    {
-        horaActual = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
-        controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
-        musicaDia = GetComponent<AudioSource>();
-        InvokeRepeating("ActualizarContador", 0f, 1f);
-        dia++;
-        InvokeRepeating("ActualizarHora", 0f, 0.25f);
-    }
     void Awake()
     {
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
@@ -42,6 +33,17 @@ public class ControlDia : MonoBehaviour
             controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
         }
     }
+
+    void Start()
+    {
+        horaActual = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 8, 0, 0);
+        controlHUD = GameObject.Find("HUD").GetComponent<ControlHUD>();
+        musicaDia = GetComponent<AudioSource>();
+        InvokeRepeating("ActualizarContador", 0f, 1f);
+        contadorDias.text = $"Día {controlGlobalScript.dias}/3";
+        InvokeRepeating("ActualizarHora", 0f, 0.25f);
+    }
+
     public int RecuentoBalas()
     {
         return controlGlobalScript.Balas;
