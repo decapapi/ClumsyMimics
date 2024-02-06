@@ -32,12 +32,16 @@ public class ControlEscenas : MonoBehaviour
 
     public void CargarEscena(string nombreEscena)
     {
-        
+        if (nombreEscena.Equals("Inicio") || nombreEscena.Equals("Victoria") || nombreEscena.Equals("Gameover")) 
+        {
+            controlGlobalScript.Resetear();
+        }
+
         if (dias != 3)
         {
             StartCoroutine(Transition(nombreEscena));
-        }else{
-            controlGlobalScript.dias = 0;
+        }
+        else{
             StartCoroutine(Transition("Victoria"));
         }
         

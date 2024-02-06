@@ -158,7 +158,6 @@ public class ControlJugador : MonoBehaviour
         {
             var clip = Resources.Load("Sonido/Bidon gasolina 2") as AudioClip;
             audioSource.PlayOneShot(clip);
-            controlGlobalScript.Resetear();
             escenas.CargarEscena("GameOver");
         }
     }

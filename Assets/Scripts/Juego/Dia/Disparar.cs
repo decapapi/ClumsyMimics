@@ -27,10 +27,10 @@ public class Disparar : MonoBehaviour
     }
     void Disparo()
     {
+        puedeDisparar = false;
         GameObject bala = Instantiate(balaPrefab, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = bala.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.right * fuerzaBalas, ForceMode2D.Impulse);
-        puedeDisparar = false;
         StartCoroutine(SonidoDisparo());
     }
     IEnumerator EsperarDisparo()

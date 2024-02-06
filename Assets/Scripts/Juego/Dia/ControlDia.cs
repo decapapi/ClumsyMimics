@@ -15,7 +15,6 @@ public class ControlDia : MonoBehaviour
     public GameObject inventario;
     public GameObject minimapa;
     private static int dia = 0;
-    public static int BalasTotales {get;set;} = 5;
     private ControlHUD controlHUD;
     private AudioSource musicaDia;
 
@@ -37,7 +36,6 @@ public class ControlDia : MonoBehaviour
         
         if (controlGlobalScript != null)
         {
-            BalasTotales = controlGlobalScript.Balas;
             controlGlobalScript.dias++;
         }else{
             GameObject nuevoControl = Instantiate(controlador);
@@ -46,17 +44,18 @@ public class ControlDia : MonoBehaviour
     }
     public int RecuentoBalas()
     {
-        return BalasTotales;
+        return controlGlobalScript.Balas;
     }
+
     public void RestarBalas()
     {
         controlHUD.QuitarBala();
-        BalasTotales--;
+        controlGlobalScript.Balas--;
     }
     public void AnadirBala()
     {
         controlHUD.AnadirBala();
-        BalasTotales++;
+        controlGlobalScript.Balas++;
     }
 
     void Update()

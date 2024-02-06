@@ -25,7 +25,6 @@ public class ControlGlobal : MonoBehaviour
 
         ObjetosGuardados[NumeroObjetos] = objeto;
         NumeroObjetos++;
-        Debug.Log("Objeto añadido: " + objeto);
         return true;
     }
 

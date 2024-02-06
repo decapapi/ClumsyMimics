@@ -9,7 +9,6 @@ public class ControlHUD : MonoBehaviour
     public Image[] balas;
 
     private int corazonesRestante;
-    private int balasRestantes;
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
@@ -22,14 +21,12 @@ public class ControlHUD : MonoBehaviour
         if (controlGlobalScript != null)
         {
             corazonesRestante = controlGlobalScript.Vidas;
-            balasRestantes = controlGlobalScript.Balas;
         }
         else
         {
             GameObject nuevoControl = Instantiate(controlador);
             controlGlobalScript = nuevoControl.GetComponent<ControlGlobal>();
             corazonesRestante = controlGlobalScript.Vidas;
-            balasRestantes = controlGlobalScript.Balas;
         }
 
         for (int i = 0; i < corazones.Length; i++)
@@ -46,7 +43,7 @@ public class ControlHUD : MonoBehaviour
 
         for (int i = 0; i < balas.Length; i++)
         {
-            if (i < balasRestantes)
+            if (i < controlGlobalScript.Balas)
             {
                 balas[i].enabled = true;
             }
@@ -59,22 +56,18 @@ public class ControlHUD : MonoBehaviour
 
     public void QuitarBala()
     {
-        if (balasRestantes <= 0)
+        if (controlGlobalScript.Balas <= 0)
             return;
-        balas[balasRestantes-1].enabled = false;
-        balasRestantes--;
-        controlGlobalScript.Balas = balasRestantes;
+        balas[controlGlobalScript.Balas-1].enabled = false;
     }
 
     public void AnadirBala()
     {
-        if (balasRestantes >= 5)
+        if (controlGlobalScript.Balas >= 5)
             return;
-        balas[balasRestantes].enabled = true;
-        balasRestantes++;
+        balas[controlGlobalScript.Balas].enabled = true;
         var clip = Resources.Load("Sonido/Recoger objeto") as AudioClip;
         audioSource.PlayOneShot(clip);
-        controlGlobalScript.Balas = balasRestantes;
     }
 
     public void QuitarCorazon()
