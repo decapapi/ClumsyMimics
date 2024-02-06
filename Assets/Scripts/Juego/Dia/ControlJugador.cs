@@ -31,6 +31,7 @@ public class ControlJugador : MonoBehaviour
     public ControlEscenas escenas;
     
     private AudioSource audioSource;
+    private bool sonidoLlavesReproducido = false;
 
     void Start()
     {
@@ -53,8 +54,9 @@ public class ControlJugador : MonoBehaviour
     {
         Vector3 inputMovimiento = Vector3.zero;
 
-        if (tiempoEnTrigger >= 3f)
+        if (tiempoEnTrigger >= 3f && !sonidoLlavesReproducido)
         {
+            sonidoLlavesReproducido = true;
             var clip = Resources.Load("Sonido/Llaves o recoger objeto") as AudioClip;
             audioSource.PlayOneShot(clip);
             escenas.CargarEscena("JuegoNoche");
