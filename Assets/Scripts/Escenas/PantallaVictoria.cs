@@ -13,9 +13,11 @@ public class Victoria : MonoBehaviour
 
     public GameObject controlador;
     public ControlGlobal controlGlobalScript;
+    private ControlEscenas controlEscenas;
     private bool puntacionGuardada = false;
     void Start()
     {
+        controlEscenas = FindObjectOfType<ControlEscenas>();
         controlGlobalScript = FindObjectOfType<ControlGlobal>();
         if (controlGlobalScript != null)
         {
@@ -35,6 +37,7 @@ public class Victoria : MonoBehaviour
             return;
         puntacionGuardada = true;
         GuardarPuntuacion(string.IsNullOrEmpty(input.text) ? "Desconocido" : input.text, puntuacion);
+        controlEscenas.CargarEscena("Inicio");
     }
 
     private void GuardarPuntuacion(string nombreJugador, int puntuacion)

@@ -37,12 +37,13 @@ public class ControlEscenas : MonoBehaviour
             controlGlobalScript.Resetear();
         }
 
-        if (dias != 3)
+        if (dias == 3)
         {
-            StartCoroutine(Transition(nombreEscena));
+            StartCoroutine(Transition("Victoria"));
+            controlGlobalScript.dias++;
         }
         else{
-            StartCoroutine(Transition("Victoria"));
+            StartCoroutine(Transition(nombreEscena));
         }
         
     }
